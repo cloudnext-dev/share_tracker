@@ -1,0 +1,114 @@
+"""
+TOS
+    https://developer.tdameritrade.com/apis
+    https://www.youtube.com/watch?v=qJ94sSyPGBw
+    https://www.youtube.com/watch?v=sVA0PeuDE4I
+    https://www.youtube.com/watch?v=KPqoC1pt9Vo
+
+Intractive Brokers
+    https://www.interactivebrokers.com/en/index.php?f=5039
+    https://github.com/areed1192/interactive-broker-python-api
+
+Etrade
+	https://developer.etrade.com/home
+	https://www.youtube.com/watch?v=6pGUFM9yqWo
+	https://www.youtube.com/watch?v=lwJoPxOL_Zw
+
+
+Get the list of stocks by sector
+sort stock in percentage drop
+gap b/w entry price and actual stock price
+prepare lisi sector by sector in case of drop price(below entry level)
+
+10000(cash available)
+7500(max allocated fund)
+list of stock by sector/3 stocks per sector/day - 15 at max trade
+enter stock if price goes below entry price
+
+		500
+11*45 = 495
+		  50
+x*stock price = a
+total fund = b
+
+(x+1)*stockprice = c
+p = b-a
+q = c-b
+if p < q:
+	choose x
+else:
+	choose x+1
+
+draw.io
+maxLimitPerDay 
+maxTradePerDay - 8 - Strategy
+maxTradePerSector - 3 - Strategy
+
+top two stocks per sector(max %tage drop from entry point)
+if more than 8:
+	maxTradePerSector = 1
+	pick top stock from each sector(max %age drop) - 11stocks
+	pick top 8 stocks(max %age drop)
+else:
+	check distinct sectors and divide stock equally(max %age drop)
+
+
+Public stock api
+finnhub.io
+
+Suggested Trades:
+
+Create Md5 files and update the Azure Intiative
+Zoom Meeting: https://ust-global.zoom.us/j/95284493843
+Meeting ID: 952 8449 3843
+Password: 123123
+
+PrdAstWu2Automation01
+PrdAstWu2Automation01
+1e4f30e0-ba75-4721-ad01-092454a46d8b
+W-NPE-UTC-SCHEDULE-07
+L-NPE-UTC-SCHEDULE-07
+
+"""
+npeemlwu2wrkrvm1
+
+DOW
+FCX
+DD
+NUE
+NEM
+344,119,698,535
+344,091,215,515
+344,089,200,771
+
+
+find where TimeGenerated > ago(30d) project _BilledSize, _IsBillable, Computer, Type
+| where _IsBillable == true and Type != "Usage"
+| extend computerName = 'npeemlwu2wrkrvm1'
+| summarize BillableDataBytes = sum(_BilledSize) by  computerName 
+| sort by BillableDataBytes desc nulls last
+
+
+Data Space =
+
+Courses 											Event Start Date
+AZ-500: Microsoft Azure Security Technologies 		9/27/2021 9:00
+DP-203: Data Engineering on Microsoft Azure			9/20/2021 9:00
+
+
+az-303
+cissp- security certification
+ccsp- cloud security certification
+
+
+maxTrade = 8
+maxTrade = 3
+
+15 suggested trade - 
+	material -3
+	1each
+
+	maxdrop Stock - materials(top3) - 1from material 
+
+
+
