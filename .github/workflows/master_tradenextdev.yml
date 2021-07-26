@@ -20,7 +20,7 @@ jobs:
     - name: Set up Python version
       uses: actions/setup-python@v1
       with:
-        python-version: '3.9'
+        python-version: '3.8'
 
     - name: Create and start virtual environment
       run: |
@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'tradenextdev'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_aee557c9bfcf4bd69749502b0e174b60 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d6222b71e56743ea942f5b6a8555ddd7 }}
