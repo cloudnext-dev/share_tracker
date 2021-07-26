@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url, include
-
+from django.conf.urls.static import static
+from .settings import STATIC_URL, STATIC_ROOT
 
 urlpatterns = [
 	#path('tradeNext/', include('tradeNext.urls')),
 	url(r"^tradeNext/", include(("tradeNext.urls", "tradeNext"), namespace = "tradeNext")),
     path('admin/', admin.site.urls),
-]
+]+ static(STATIC_URL, document_root=STATIC_ROOT)
