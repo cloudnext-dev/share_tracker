@@ -1,4 +1,4 @@
-"""
+"
 TOS
     https://developer.tdameritrade.com/apis
     https://www.youtube.com/watch?v=qJ94sSyPGBw
