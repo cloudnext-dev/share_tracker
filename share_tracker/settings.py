@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tradeNext',
+    #'tradeNext',
     'rest_framework',
+    'tradeNext.app.tradeNextConfig',
 ]
 
 MIDDLEWARE = [
