@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'tradenextdev'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d1cf3a7b44a8448e8b664635d0841cbb }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_3183073bf5ff4c6692865b2001b04f44 }}
