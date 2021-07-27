@@ -34,5 +34,7 @@ tzlocal==2.1
 urllib3==1.26.6
 w3lib==1.22.0
 websockets==8.1
+wheel
 yahoo-fin==0.8.9.1
 yfinance==0.1.63
+
