@@ -58,7 +58,7 @@ class Strategy(models.Model):
 		return "%s" % (self.StrategyName)
 
 class AssetDetails(models.Model):
-	AssetId = models.CharField(primary_key=True, max_length=15)
+	AssetId = models.CharField(max_length=15)
 	AccountId = models.ForeignKey(Account, on_delete=models.CASCADE)
 	StrategyId = models.ForeignKey(Strategy, on_delete=models.CASCADE)
 	EntryPrice = models.FloatField()

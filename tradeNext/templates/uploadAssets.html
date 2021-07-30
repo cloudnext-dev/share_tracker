@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<main class="page-content pt-2">
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="form-group col-md-12">
+                <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
+                    <span>Hide Trade Menu</span>
+                </a>
+                <a id="pin-sidebar" class="btn btn-outline-secondary rounded-0" href="#">
+                    <span>Pin Trade Menu</span>
+                </a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <h5>TradeNext - Limit Trade Options</h5>
+                <p  class="property_section">Lisf of Assets-Assets respective Entry Price, Current Market Price and extra information like Averaging Price and etc.</p>
+
+            </div>
+        </div>
+        <section class="site_filter">
+            <div class="container-fluid property_section">
+                <div class="row">
+                    <form method="post" enctype="multipart/form-data" style="width:100%">
+                    {% csrf_token %}
+                    <div class="col-sm-3 col-3">
+                        <div class="form-group">
+                            <label for="Brokers">Brokers</label>
+                            <select class="form-control property_section" name="brokers" id="brokers" url = "{%url 'tradeNext:get_brokers' %}">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-3">
+                        <div class="form-group">
+                            <label for="Strategies">Startegy</label>
+                            <select class="form-control property_section" name="strategies" id="strategies" url = "{%url 'tradeNext:get_strategy' %}">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-3">
+                        <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-10 col-10">
+                                        <input type="file" name="assetFile">
+                                    </div>
+                                    <div class="col-sm-2 col-2">
+                                        <button type="submit">Upload</button>
+                                    </div>
+                                </div>
+                    
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-3">
+                        <div class="form-group">
+                            {% if uploaded_file_url %}
+                                <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+                            {% endif %}
+                            <p><a href="{%url 'tradeNext:index' %}">Return to Index</a></p>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+</main>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'js/uploadAsset.js' %}" type="text/javascript">
+    </script>
+{% endblock %}

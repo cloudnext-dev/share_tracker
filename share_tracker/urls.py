@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url, include
 from django.conf.urls.static import static
-from .settings import STATIC_URL, STATIC_ROOT
+from django.conf import settings
 
 urlpatterns = [
-	#path('tradeNext/', include('tradeNext.urls')),
 	url(r"^tradeNext/", include(("tradeNext.urls", "tradeNext"), namespace = "tradeNext")),
     path('admin/', admin.site.urls),
-]+ static(STATIC_URL, document_root=STATIC_ROOT)
+    url(r'^maintenance-mode/', include('maintenance_mode.urls')),#This is enable us to toggle on/off via super user 
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

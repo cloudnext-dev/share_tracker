@@ -3,8 +3,11 @@ from django.http import HttpResponse
 from .models import Customer, Broker, Account, Strategy, Trades, Reporting, AssetDetails
 from django.http import JsonResponse
 from rest_framework.generics import ListAPIView
-from .serializers import AssetDetailsSerializers
-from tradeNext.services import suggestedTrade
+from tradeNext.serializers.assetDetailsSerializers import AssetDetailsSerializers
+from tradeNext.services import suggestedTrade, populateTables
+from django.core.files.storage import FileSystemStorage
+from maintenance_mode.decorators import force_maintenance_mode_off, force_maintenance_mode_on
+from maintenance_mode.core import get_maintenance_mode, set_maintenance_mode
 
 
 def Index(request):
@@ -81,5 +84,44 @@ def getIndustry(request):
         }
         return JsonResponse(data, status = 200)
 
+def getBrokers(request):
+    if request.method == "GET" and request.is_ajax():
+        brokers = Broker.objects.all().order_by('BrokerAccountId').values_list('BrokerAccountId').distinct()
+        brokers = [i[0] for i in list(brokers)]
+        data = {
+            "brokers": brokers, 
+        }
+        return JsonResponse(data, status = 200)
 
+def getStrategy(request):
+    if request.method == "GET" and request.is_ajax():
+        strategies = Strategy.objects.exclude(StrategyName__isnull=True).\
+        	exclude(StrategyName__exact='').order_by('StrategyName').values_list('StrategyName').distinct()
+        strategies = [i[0] for i in list(strategies)]
+        data = {
+            "strategies": strategies, 
+        }
+        return JsonResponse(data, status = 200)
+@force_maintenance_mode_off
+def uploadAssets(request):
+	if request.method == 'POST' and request.FILES.get('assetFile') and request.FILES.get('assetFile').content_type == 'application/vnd.ms-excel':
+		assetFile = request.FILES['assetFile']
+		brokerAccountId = request.POST.get('brokers')
+		brokerObj = Broker.objects.get(BrokerAccountId = brokerAccountId)
+		accountObj = Account.objects.get(BrokerId = brokerObj.BrokerId)
+		strategyName = request.POST.get('strategies')
+		strategyObj = Strategy.objects.get(StrategyName = strategyName)
+		fs = FileSystemStorage()
+		filename = fs.save(assetFile.name, assetFile)
+		uploaded_file_url = fs.url(filename)
+		populateModel = populateTables.populateTables()
+		set_maintenance_mode(True)
+		insertionResult = populateModel.insertAssetsDetails(filename, strategyObj, accountObj)
+		set_maintenance_mode(False)
+		return render(request, 'uploadAssets.html', {
+			'uploaded_file_url': insertionResult
+		})
+	return render(request, 'uploadAssets.html', {
+			'uploaded_file_url': 'No File Selected / Csv File Only'
+		})
 

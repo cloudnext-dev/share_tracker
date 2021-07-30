@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import AssetDetails, Strategy
+from tradeNext.models import AssetDetails, Strategy
 
 class AssetDetailsSerializers(serializers.ModelSerializer):
 	StrategyId = serializers.CharField(source='StrategyId.StrategyName')
