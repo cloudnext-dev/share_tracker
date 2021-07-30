@@ -84,7 +84,7 @@ def getIndustry(request):
             "industries": industries, 
         }
         return JsonResponse(data, status = 200)
-
+@force_maintenance_mode_off
 def getBrokers(request):
     if request.method == "GET" and request.is_ajax():
         brokers = Broker.objects.all().order_by('BrokerAccountId').values_list('BrokerAccountId').distinct()
@@ -93,7 +93,7 @@ def getBrokers(request):
             "brokers": brokers, 
         }
         return JsonResponse(data, status = 200)
-
+@force_maintenance_mode_off
 def getStrategy(request):
     if request.method == "GET" and request.is_ajax():
         strategies = Strategy.objects.exclude(StrategyName__isnull=True).\

@@ -18,6 +18,7 @@ import mimetypes
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAINTENANCE_MODE = None
 MAINTENANCE_MODE_IGNORE_ADMIN_SITE = True
+MAINTENANCE_MODE_TEMPLATE = '503.html'
 #https://pypi.org/project/django-maintenance-mode/
 
 # Quick-start development settings - unsuitable for production
