@@ -13,7 +13,7 @@ from datetime import datetime
 
 def Index(request):
 	set_maintenance_mode(False)
-    return render(request, 'index.html')
+	return render(request, 'index.html')
 
 def limitTrade(request):
 	set_maintenance_mode(False)
