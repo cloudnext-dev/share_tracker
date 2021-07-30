@@ -8,6 +8,7 @@ from tradeNext.services import suggestedTrade, populateTables
 from django.core.files.storage import FileSystemStorage
 from maintenance_mode.decorators import force_maintenance_mode_off, force_maintenance_mode_on
 from maintenance_mode.core import get_maintenance_mode, set_maintenance_mode
+from datetime import datetime
 
 
 def Index(request):
@@ -112,7 +113,10 @@ def uploadAssets(request):
 		strategyName = request.POST.get('strategies')
 		strategyObj = Strategy.objects.get(StrategyName = strategyName)
 		fs = FileSystemStorage()
-		filename = fs.save(assetFile.name, assetFile)
+		updateFileName = assetFile.name.split('.')
+		date = datetime.now().strftime("%Y_%m_%d-%I_%M_%S_%p")
+		updateFileName = updateFileName[0] + '_' + date + '.' + updateFileName[1]
+		filename = fs.save(updateFileName, assetFile)
 		uploaded_file_url = fs.url(filename)
 		populateModel = populateTables.populateTables()
 		set_maintenance_mode(True)

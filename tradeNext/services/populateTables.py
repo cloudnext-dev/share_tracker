@@ -9,7 +9,6 @@ class populateTables():
 		asset_csv = open(filePath, 'r', encoding = "utf-8")
 		reader = csv.reader(asset_csv)
 		headers = next(reader, None)[1:]
-		import pdb;pdb.set_trace()
 		AssetDetails.objects.filter(AccountId = account.AccountId).delete()
 		insertedList = []
 		notInsertedList = []
