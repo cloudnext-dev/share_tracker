@@ -16,7 +16,7 @@ import mimetypes
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MAINTENANCE_MODE = None
+MAINTENANCE_MODE = False
 MAINTENANCE_MODE_IGNORE_ADMIN_SITE = True
 MAINTENANCE_MODE_TEMPLATE = '503.html'
 #https://pypi.org/project/django-maintenance-mode/
