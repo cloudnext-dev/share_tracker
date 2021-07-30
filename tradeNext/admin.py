@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Customer, Broker, Account, Strategy, Trades, Reporting, AssetDetails
+from maintenance_mode.core import get_maintenance_mode, set_maintenance_mode
 
 class CustomerAdmin(admin.ModelAdmin):
 	list_display = ('FirstName', 'LastName', 'EmailId', 'Mobile')
@@ -23,7 +24,7 @@ class AssetDetailsAdmin(admin.ModelAdmin):
 	list_display = ('AssetId', 'AccountId', 'StrategyId', 'EntryPrice', 'AvgEntryPoint1', 'AvgEntryPoint2', 'TargetPrice', 'Sector', 'Industry', 'Beta', 'NextEarningDate', 'CurrentMarketPrice', 'EntryPriceDiff', 'Avg1Diff', 'Avg2Diff', 'Quantity')
 	readonly_fields = ('AvgEntryPoint1', 'AvgEntryPoint2', 'TargetPrice', 'Sector', 'Industry', 'NextEarningDate', 'EntryPriceDiff', 'Avg1Diff', 'Avg2Diff', 'Quantity',)
 	
-
+set_maintenance_mode(False)
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Broker, BrokerAdmin)
 admin.site.register(Account, AccountAdmin)
