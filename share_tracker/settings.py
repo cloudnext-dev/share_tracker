@@ -16,9 +16,6 @@ import mimetypes
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MAINTENANCE_MODE = None
-MAINTENANCE_MODE_IGNORE_ADMIN_SITE = True
-MAINTENANCE_MODE_TEMPLATE = '503.html'
 #https://pypi.org/project/django-maintenance-mode/
 
 # Quick-start development settings - unsuitable for production
@@ -79,7 +76,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'share_tracker.wsgi.application'
-
+MAINTENANCE_MODE = None
+MAINTENANCE_MODE_IGNORE_ADMIN_SITE = True
+MAINTENANCE_MODE_TEMPLATE = '503.html'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

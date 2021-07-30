@@ -12,11 +12,9 @@ from datetime import datetime
 
 
 def Index(request):
-	set_maintenance_mode(False)
 	return render(request, 'index.html')
 
 def limitTrade(request):
-	set_maintenance_mode(False)
 	return render(request, "limitTrade.html", {})
 
 class AssetListing(ListAPIView):
@@ -45,7 +43,6 @@ class AssetListing(ListAPIView):
 		return queryList
 
 def suggestLimitTrade(request):
-	set_maintenance_mode(False)
 	return render(request, "suggestedLimitTrade.html", {})
 
 class SuggestedAssetListing(ListAPIView):
