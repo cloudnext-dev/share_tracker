@@ -9,6 +9,7 @@ from django.core.files.storage import FileSystemStorage
 from maintenance_mode.decorators import force_maintenance_mode_off, force_maintenance_mode_on
 from maintenance_mode.core import get_maintenance_mode, set_maintenance_mode
 from datetime import datetime
+import concurrent.futures
 
 
 def Index(request):
@@ -123,9 +124,9 @@ def uploadAssets(request):
 		insertionResult = populateModel.insertAssetsDetails(filename, strategyObj, accountObj)
 		set_maintenance_mode(False)
 		return render(request, 'uploadAssets.html', {
-			'uploaded_file_url': insertionResult
+			'result': insertionResult
 		})
 	return render(request, 'uploadAssets.html', {
-			'uploaded_file_url': 'No File Selected / Csv File Only'
+			'result': 'No File Selected / Csv File Only'
 		})
 

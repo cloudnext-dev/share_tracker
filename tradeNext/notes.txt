@@ -114,3 +114,1027 @@ maxTrade = 3
 
 Azure Devops
 csv upload 
+
+
+security groups are the firewall applies at the instance level
+metadata
+curl http://169.254.169.254/latest/mete-data/ ---run this command from any instance
+curl http://169.254.169.254/latest/user-data  ---run this command from any instance
+
+Instance Type
+spot on-demand reserve
+
+private subnet - no entry for internet gateway in routetable
+bastion host or jump host - is used to connect private host in private subnet using public subnet
+
+Agent Forwarding
+
+Private subnet to connect with internet - 
+nat instance 
+nat natgateway
+
+PlacementGroup
+	cluster
+	partition
+	spread
+Elasitc Fabric Adaptor - have high performance computing
+Elastic network interface - do not have high performance computing
+
+
+
+5th - direct-connect - available-down and routing detail page internal linkinng
+6ht - nat -page internal linking- caching using python flask
+7th - cache implementation
+8th - cache implementaion on webserver
+
+11th - Implemented All option in Asset Region select box, Checked Redis-Cache Perfomance. Using Locust for measuring PAC-BOT API response time -6hrs
+12th - Network Interface can be seen and listed on the Index Page of Network Dashboard Page and Network Details Page is also Implemented. Though some of the Network Interface details are missing such as 
+Security Group Partial Information is coming, Instance ID, IPv4 Public IP, Secondary private IPv4 IPs, Elastic Fabric Adapter, IPv6 IPs, Elastic IP owner, Allocation ID, Association ID, Outpost ID, Network card index.
+I connected with Robin(Pac-bot Developer) for Route53 resolver inbound. This data is available in Pac-Bot but no API is available for the same. So we have to raise a fresh request for this --------7hrs
+
+13- Update VPC dropdown with VPC-Id, showing in-use and available for elastic ip(tweaked logic a bit) and captured average response time of pac-bot api - 5hrs
+
+ssh arustag1@10.65.53.88
+DirectConnectGateway
+Endpoints
+transit gateway attachment
+vgw-5721f249
+
+
+Issue --- Security Group Issue -------- sg-8addfeef
+
+Validation eservice priavate gateway is pending
+
+
+
+{
+  "ag": "aws-all",
+  "filter": {"resourceType":"routetable"},
+  "from": 0,
+  "key": "string",
+  "searchtext": "",
+  "size": 0
+}
+
+accountName
+accountName
+
+transitgateway
+transitgateway
+vpngateway
+vpngateway
+
+https://t-mobile.webex.com/meet/YBhardw1; 
+networkInterfaceDetails
+
+https://pacbot.t-mobile.com/pl/omnisearch/omni-search-details/Assets/transit%20gateway%20attachment?ag=aws-all&domain=Infra%20%26%20Platforms
+
+virtualinterfaces
+
+sudo systemctl stop assetdashboard
+sudo service nginx stop
+sudo systemctl restart assetdashboard
+sudo systemctl restart networkdashboard
+sudo service nginx restart
+sudo systemctl restart redis.service
+
+sudo systemctl start assetdashboard
+sudo service nginx start
+
+vpc-0a6c80593dc46d7a8
+vpnGatewayDetails
+vpngateway-details.html
+<!-- -->
+
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mbyI6eyJmaXJzdE5hbWUiOiJBTktJVCIsImxhc3ROYW1lIjoiUlVTVEFHSSIsInVzZXJSb2xlcyI6WyJHUk9VUF9TVVBFUl9BRE1JTiIsIlJPTEVfQUNUSVZJVElfVVNFUiIsIlJPTEVfVVNFUiIsIkdST1VQX0FDVElWSVRJX1VTRVIiXSwiZGVmYXVsdEFzc2V0R3JvdXAiOiJhd3MtYWxsIiwicHJlZmVyZW5jZXMiOiJ7XCJ1c2VyR3VpZGVkVG91clwiOlwidHJ1ZVwifSIsInVzZXJOYW1lIjoiUlVTVEFHSSwgQU5LSVQiLCJ1c2VySWQiOiJhbmtpdC5ydXN0YWdpMUB0LW1vYmlsZS5jb20iLCJyZWNlbnRseVZpZXdlZEFnIjoiYXdzLWFsbCxhenVyZS1hbGwsZWJhcm9jYTEiLCJlbWFpbCI6ImFua2l0LnJ1c3RhZ2kxQHQtbW9iaWxlLmNvbSJ9LCJ1c2VyX25hbWUiOiJhbmtpdC5ydXN0YWdpMUB0LW1vYmlsZS5jb20iLCJzY29wZSI6WyJyZXNvdXJjZS1hY2Nlc3MiXSwiZXhwIjoxNjA2NDk3MTE2LCJhdXRob3JpdGllcyI6WyJHUk9VUF9TVVBFUl9BRE1JTiIsIlJPTEVfQUNUSVZJVElfVVNFUiIsIkdST1VQX0FDVElWSVRJX1VTRVIiLCJST0xFX1VTRVIiXSwianRpIjoiYTZjYTMxN2QtMTc3Ny00MTU4LTk2ZDctZmRmZTk2Zjk3NmM5IiwiY2xpZW50X2lkIjoiMjJlMTQ5MjItODdkNy00ZWU0LWE0NzAtZGEwYmIxMGQ0NWQzIn0.IyKnkwsYvAZgTuuG4XgHDgOqHJIROD0JJabAyVZ3ZnssNDmjG4klLBdPXLvsU3X6b8uGsTvrZ7XXxllT5WCpYf_MCfE8LdJKB1hCPOPKEytf2iVuuRh-MFkjZ6Zq-zsT1atieb3Z_ogtrMcmfYjFkgak90oSMG9ZIpIvbF1zr-U5GAZR6pBiEWAQYaSoE--XZW3wAss-A8r02t7VJiXPhysj2VdmncqMahIMh3x-RNNYCo_2Vh-tdRWQ9thC_xPquJKWlZKK0Ffc92cqxC3dWZ5LSeyITeyrpmdKTceAbUfyw4GZAX6IR-RUQ0zUw7Cls9tFdth0wHW_rlHezhWs2g' -d '{ \ 
+   "ag": "aws-all", \ 
+   "filter": {"resourceType":"internetgateway"}, \ 
+   "from": 0, \ 
+   "key": "string", \ 
+   "searchtext": "", \ 
+   "size": 0 \ 
+ }' 'https://pacbot.t-mobile.com/api/asset/v1/list/assets'
+
+
+import requests
+import json
+
+dataObj = {"ag": "aws-all", "filter": {"resourceType":"vpc"}, "from": 0, "key": "string", "searchtext": "", "size": 0}
+dataObj = json.dumps(dataObj)
+headerObj = {"Content-Type": "application/json", "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mbyI6eyJmaXJzdE5hbWUiOiJBTktJVCIsImxhc3ROYW1lIjoiUlVTVEFHSSIsInVzZXJSb2xlcyI6WyJHUk9VUF9TVVBFUl9BRE1JTiIsIlJPTEVfQUNUSVZJVElfVVNFUiIsIlJPTEVfVVNFUiIsIkdST1VQX0FDVElWSVRJX1VTRVIiXSwiZGVmYXVsdEFzc2V0R3JvdXAiOiJhd3MtYWxsIiwicHJlZmVyZW5jZXMiOiJ7XCJ1c2VyR3VpZGVkVG91clwiOlwidHJ1ZVwifSIsInVzZXJOYW1lIjoiUlVTVEFHSSwgQU5LSVQiLCJ1c2VySWQiOiJhbmtpdC5ydXN0YWdpMUB0LW1vYmlsZS5jb20iLCJyZWNlbnRseVZpZXdlZEFnIjoiYXdzLWFsbCxhenVyZS1hbGwsZWJhcm9jYTEiLCJlbWFpbCI6ImFua2l0LnJ1c3RhZ2kxQHQtbW9iaWxlLmNvbSJ9LCJ1c2VyX25hbWUiOiJhbmtpdC5ydXN0YWdpMUB0LW1vYmlsZS5jb20iLCJzY29wZSI6WyJyZXNvdXJjZS1hY2Nlc3MiXSwiZXhwIjoxNjA2NDk3MTE2LCJhdXRob3JpdGllcyI6WyJHUk9VUF9TVVBFUl9BRE1JTiIsIlJPTEVfQUNUSVZJVElfVVNFUiIsIkdST1VQX0FDVElWSVRJX1VTRVIiLCJST0xFX1VTRVIiXSwianRpIjoiYTZjYTMxN2QtMTc3Ny00MTU4LTk2ZDctZmRmZTk2Zjk3NmM5IiwiY2xpZW50X2lkIjoiMjJlMTQ5MjItODdkNy00ZWU0LWE0NzAtZGEwYmIxMGQ0NWQzIn0.IyKnkwsYvAZgTuuG4XgHDgOqHJIROD0JJabAyVZ3ZnssNDmjG4klLBdPXLvsU3X6b8uGsTvrZ7XXxllT5WCpYf_MCfE8LdJKB1hCPOPKEytf2iVuuRh-MFkjZ6Zq-zsT1atieb3Z_ogtrMcmfYjFkgak90oSMG9ZIpIvbF1zr-U5GAZR6pBiEWAQYaSoE--XZW3wAss-A8r02t7VJiXPhysj2VdmncqMahIMh3x-RNNYCo_2Vh-tdRWQ9thC_xPquJKWlZKK0Ffc92cqxC3dWZ5LSeyITeyrpmdKTceAbUfyw4GZAX6IR-RUQ0zUw7Cls9tFdth0wHW_rlHezhWs2g"}
+
+result = requests.post(url, headers = headerObj, data = dataObj)
+
+
+dhcpoptions
+dhcpoptions
+
+get_dhcp_details.generateDHCPDetails
+
+[{'portrangeto': '', '_cloudType': 'Aws', 'ruleaction': 'allow', 'rulenumber': '100', 'ipv6cidrblock': '', 'egress': 'true', 'accountid': '637180334673', 'protocol': '-1', 'icmptype': '', 'accountname': 'discover-prd', 'portrangefrom': '', 'cidrblock': '0.0.0.0/0', '_batchLoadId': 'EC0E0F7C1506E0E065D8100B273D333D', 'region': 'ca-central-1', 'networkaclid': 'acl-dd1857b5', 'icmptypecode': ''}, {'portrangeto': '', '_cloudType': 'Aws', 'ruleaction': 'allow', 'rulenumber': '100', 'ipv6cidrblock': '', 'egress': 'false', 'accountid': '637180334673', 'protocol': '-1', 'icmptype': '', 'accountname': 'discover-prd', 'portrangefrom': '', 'cidrblock': '0.0.0.0/0', '_batchLoadId': 'EC0E0F7C1506E0E065D8100B273D333D', 'region': 'ca-central-1', 'networkaclid': 'acl-dd1857b5', 'icmptypecode': ''}, {'portrangeto': '', '_cloudType': 'Aws', 'ruleaction': 'deny', 'rulenumber': '32767', 'ipv6cidrblock': '', 'egress': 'false', 'accountid': '637180334673', 'protocol': '-1', 'icmptype': '', 'accountname': 'discover-prd', 'portrangefrom': '', 'cidrblock': '0.0.0.0/0', '_batchLoadId': 'EC0E0F7C1506E0E065D8100B273D333D', 'region': 'ca-central-1', 'networkaclid': 'acl-dd1857b5', 'icmptypecode': ''}, {'portrangeto': '', '_cloudType': 'Aws', 'ruleaction': 'deny', 'rulenumber': '32767', 'ipv6cidrblock': '', 'egress': 'true', 'accountid': '637180334673', 'protocol': '-1', 'icmptype': '', 'accountname': 'discover-prd', 'portrangefrom': '', 'cidrblock': '0.0.0.0/0', '_batchLoadId': 'EC0E0F7C1506E0E065D8100B273D333D', 'region': 'ca-central-1', 'networkaclid': 'acl-dd1857b5', 'icmptypecode': ''}]
+
+
+https://pacbot.t-mobile.com/pl/asset-dashboard/distribution-cost/asset-listing?ag=aws-all&domain=Infra%20%26%20Platforms&toTargetTypes=true ---list all the asset type
+
+
+https://pacbot.t-mobile.com/api/asset/v1/count?ag=aws-all&domain=Infra%20%26%20Platforms -- 
+
+
+from get_region import generateRegion
+token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mbyI6eyJmaXJzdE5hbWUiOiJBTktJVCIsImxhc3ROYW1lIjoiUlVTVEFHSSIsInVzZXJSb2xlcyI6WyJHUk9VUF9TVVBFUl9BRE1JTiIsIlJPTEVfQUNUSVZJVElfVVNFUiIsIlJPTEVfVVNFUiIsIkdST1VQX0FDVElWSVRJX1VTRVIiXSwiZGVmYXVsdEFzc2V0R3JvdXAiOiJhd3MtYWxsIiwicHJlZmVyZW5jZXMiOiJ7XCJ1c2VyR3VpZGVkVG91clwiOlwidHJ1ZVwifSIsInVzZXJOYW1lIjoiUlVTVEFHSSwgQU5LSVQiLCJ1c2VySWQiOiJhbmtpdC5ydXN0YWdpMUB0LW1vYmlsZS5jb20iLCJyZWNlbnRseVZpZXdlZEFnIjoiYXdzLWFsbCxhenVyZS1hbGwsZWJhcm9jYTEiLCJlbWFpbCI6ImFua2l0LnJ1c3RhZ2kxQHQtbW9iaWxlLmNvbSJ9LCJ1c2VyX25hbWUiOiJhbmtpdC5ydXN0YWdpMUB0LW1vYmlsZS5jb20iLCJzY29wZSI6WyJyZXNvdXJjZS1hY2Nlc3MiXSwiZXhwIjoxNjA2ODM4MzIxLCJhdXRob3JpdGllcyI6WyJHUk9VUF9TVVBFUl9BRE1JTiIsIlJPTEVfQUNUSVZJVElfVVNFUiIsIkdST1VQX0FDVElWSVRJX1VTRVIiLCJST0xFX1VTRVIiXSwianRpIjoiZDg0NTAxNjItOGM1Mi00NmQ1LTgxY2YtY2UxYjUwNzg4YzdhIiwiY2xpZW50X2lkIjoiMjJlMTQ5MjItODdkNy00ZWU0LWE0NzAtZGEwYmIxMGQ0NWQzIn0.0Q5tdkiitxnpo54Jd4hOvAOp-D-ZEy1dSR4kQF73E5cj6dihObDOqTEwFiUgGqQqBtn7r3RAsnYfsFk-EUHsiRbzRgBhyM8sxDtc74P_tHE3xnI6Dp09rqZXThN4Zn4xzJHPNb6f8CnCuxi4oWNDU3M0WFPxOSGHm2BTHm86p-Fkdo-sfkHrmKceznB1oa_KxhIdF94H_OMWBUFjWtjp2NT3OYDDvSQdcGDz2YLIiRGW7mNi3b3xPERZpCtK3THnYUyWFp8RzRdTliUqhLznjoPxhotYyFCSvFpVJjsCDmqRZYsuVWHvYUs6slEPOhYPMwbZQyJcfAtdkryZJ_1KMA'
+vpcid = 'vpc-0a6c80593dc46d7a8'
+generateRegion(token, vpcid)
+
+
+@app.route('/genRegion/<assetGroup>/<vpcId>')
+def getRegion(assetGroup, vpcId):
+generateRegion
+get_region
+
+regionList
+
+ <div class="col-sm-6">
+<div class="container-fluid bg-3 text-center">
+                          <h4>Details Fetched From Pac-bot Api</h4><br>
+                </div><br>
+
+
+resAccount/ - getAccount -accountList
+
+resType/ - getVPC - vpcList
+'getVPC/' + group + '/' + account + '/' + region)
+
+get_region.generateRegion(token, accountName)})
+get_All_VPC.getVPC(token, str(assetAccount, str(assetRegion)))})
+get_vpc.generateVpc(token, 
+
+
+resType - getType - assetList
+
+mv get_ALL_ACCOUNTS.py get_accounts.py
+generateAccounts(token)
+
+
+resId/' + group +'/' + account +'/'+ vpcid +'/' + atype)   
+getAssestIds/ assetIds
+
+get_All_IDS.get_id(token, str(assetVPCID), str(assetType), str(assetAccount))})
+get_assstIs.generateIds
+
+
+certifi==2020.11.8
+chardet==3.0.4
+click==7.1.2
+Flask==1.1.2
+Flask-WTF==0.14.3
+idna==2.10
+itsdangerous==1.1.0
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+requests==2.25.0
+urllib3==1.26.2
+Werkzeug==1.0.1
+WTForms==2.3.3
+
+
+Route tables   ==> routetable
+DHCP options sets  ==> dhcpoption
+Subnets   ==> subnet
+Network ACLs  ==> networkacl
+Security Groups ==> sg
+NAT Gateways  ==> nat
+VPC Peering Connections  ==> peeringconnection(acceptervpcid,requestervpcid),pcx-f9b71f90
+{
+  "ag": "aws-all",
+  "filter": {"resourceType":"transitgateway"},
+  "from": 0,
+  "key": "string",
+  "searchtext": "",
+  "size": 0
+}
+
+Internet gateways  ==>  internetgateway
+Transit Gateways     ==> transitgateway
+
+Elastic IP  ==> elasticip
+
+
+var newDiv = document.createElement("div");
+                                      newDiv.className = "container-fluid bg-3 text-center form-group"
+                                      ahtml = '<h3>List of All the ' + atype + ' for ' + vpcid
+                                      newDiv.innerHTML = ahtml
+                                      document.getElementById("hello").appendChild(newDiv)
+
+
+var newDiv = document.createElement("div");
+newDiv.className = 'col-sm-6 form-group text-center';
+ahtml = '<a href="'+ mainUrl + asset.id + '">' + asset.name + ' - ' + asset.id  + '</a>'
+newDiv.innerHTML = ahtml;
+document.getElementById("hello").appendChild(newDiv);
+
+
+
+{% if network.portrangefrom and network.portrangeto %}                                                                                                             {{ network.portrangefrom }}-{{ network.portrangeto }}
+                                        {% else %}
+                                                {{ network.portrangefrom }}{{ network.portrangeto }}
+                                        {% endif %}
+
+
+
+transitgateway Attachment, elastic ip, VPN , Endpoints, customerGateway
+
+
+import base64
+import os
+import json
+def gen_token():
+passStr = '40e57918-5e52-7cd6-90d3-6a3c2217253f'+':'+'s3cr3tdYdYX2J405JmELpreZVeqfWybPNFjuNAyay4PQe'
+passStr = passStr.encode('utf-8')
+bas64code = base64.b64encode(passStr)
+bas64code = str(bas64code).replace("'",'')
+bas64code = bas64code[1:]
+headerObj = {"Content-Type": "application/json", "authorization": "Basic {}".format(bas64code)}
+url = 'https://pacbot.t-mobile.com/api/auth/oauth/token?grant_type=client_credentials'
+resp = requests.post(url, headers = headerObj, verify = False)
+resJson = resp.json()
+return(resJson['access_token'])
+
+if __name__ == '__main__':
+gen_token()
+
+resp = requests.post(url, headers = headerObj, verify = False)
+
+    commandUrl = 'curl -H "Content-Type: application/json" -H "authorization: Basic {}" -X POST https://pacbot.t-mobile.com/api/auth/oauth/token?grant_type=client_credentials'.format(bas64code)
+    res = os.popen(commandUrl)
+    res = res.read()
+    json.dumps(res)
+    res = json.loads(res)
+    print(res)
+    return(res.get('access_token'))
+
+https://pacbot.t-mobile.com/pl/omnisearch/omni-search-details/Assets/transit%20gateway%20attachment?ag=aws-all&domain=Infra%20%26%20Platforms
+
+
+
+def generateAccounts(token):
+    dataObj = {"ag": "aws-all", "filter": {"resourceType":"vpc"}, "from": 0, "key": "string", "searchtext": "", "size": 0}
+    dataObj = json.dumps(dataObj)
+    accountList = []
+    headerObj = {"Content-Type": "application/json", "Authorization": "Bearer {}".format(token)}
+    url = 'https://pacbot.t-mobile.com/api/asset/v1/list/assets'
+    resp = requests.post(url, headers = headerObj, data = dataObj, verify = False)
+    resJson = resp.json()
+    for res in resJson.get('data').get('response'):
+        accountList.append(res.get('accountname'))
+    uniqueAccountArray = []
+    uniqueAccountArray.append({'id': 'defualt', 'name': 'Choose Assest Account'})
+    for value in set(accountList):
+        accountDict = {}
+        accountDict['id'] = value
+        accountDict['name'] = value
+        uniqueAccountArray.append(accountDict)
+    return uniqueAccountArray
+
+if __name__ == '__main__':
+    generateAccounts(token)
+
+
+Network Acl
+Missing Info - Subnet association - cidr info missing
+
+PeeringConneciton
+Missing Info - Subnet Association info and details are missing
+
+Security Group
+Data Refresh Time - 
+Issue --- Security Group Issue -------- sg-8addfeef
+
+DHCP option
+missing info --Option Set Name
+Issue - for one case 'netbios-node-type' is coming --- http://10.65.53.88:8000/dhcpDetails/aws-all/shared-npe/us-west-2/vpc-26f80c40/dhcpoptions/dopt-0288adb05e21e2b64
+for one case 'netbios-node-type' is not coming  ---http://10.65.53.88:8000/dhcpDetails/aws-all/shared-npe/us-west-2/vpc-1e22027b/dhcpoptions/dopt-0be3af0f50f2aab58
+
+
+
+NAT Gatewy
+    
+
+RouteTable
+Issue - if target is VPC then Destination CIDR is missing -rtb-0d5a3f061dad4c485 - sharedNPE
+Missing Info - Subnet association - cidr info missing
+
+Subnet
+Missing Info - RouteTable, NetworkACL, Network Border Group, Default Subnet, Auto-assign public IPv4 address, Auto-assign customer-owned IPv4 address, Customer-owned IPv4 pool, Outpost ID, Subnet ARN are missing
+
+
+ElasticIp
+
+Missing Info ---Type,Associated instance ID, publicDNS, NAT Gateway ID, Address Pool
+
+VPN
+All Details available
+
+
+
+Transit Gateway
+Direct Connect Association missing
+
+Customer Gateway
+Device, Certificate ARN Missing
+
+
+Direct Connect
+Location(Partial Coming),Jumbo frame capable, Virtual Interfaces(Table) are Missing
+
+Virtual Interface
+
+AWS device, MTU, Location(Partial), Jumbo frame capable are missing
+
+peering - id, AWS device
+
+
+********************************************************************************************************************************************
+                                        Search API
+********************************************************************************************************************************************
+
+{ag: "aws-all", domain: "Infra & Platforms", doNotReturnFilter: true, includeAllAssets: false, from: 0,…}
+ag: "aws-all"
+doNotReturnFilter: true
+domain: "Infra & Platforms"
+filter: {groupBy: {type: "searchFilterAttributeGroup", name: "Group",…}}
+groupBy: {type: "searchFilterAttributeGroup", name: "Group",…}
+name: "Group"
+type: "searchFilterAttributeGroup"
+values: [{type: "searchFilterAttribute", name: "Assets", applied: true}]
+0: {type: "searchFilterAttribute", name: "Assets", applied: true}
+from: 0
+includeAllAssets: false
+searchText: "transit gateway attachment"
+size: 50
+
+
+{
+"ag": "aws-all",
+"doNotReturnFilter": true,
+"domain": "Infra & Platforms",
+"filter": {
+"groupBy": {
+  "name": "Group",
+  "type": "searchFilterAttributeGroup",
+  "values": [{"type": "searchFilterAttribute", "name": "Assets", "applied": true}]
+}
+},
+"from": 0,
+"includeAllAssets": false,
+"searchText": "transit gateway attachment",
+"size": 100
+}
+
+https://pacbot.t-mobile.com/pl/omnisearch/assets-details/eni/eni-0039e3cb5d26c2b06?ag=aws-all&domain=Infra%20%26%20Platforms
+https://pacbot.t-mobile.com/api/asset/v1/aws-all/eni/eni-0039e3cb5d26c2b06/details
+********************************************************************************************************************************************
+********************************************************************************************************************************************
+
+
+PPO nO 11100031
+
+
+Network Asset Dashboard
+
+**********************************************************************************************************
+Update Managememt - SPRINT4
+**********************************************************************************************************
+
+TMTNPE- NO Vms
+TMTPROD- No vms
+
+Security Center
+
+
+**********************************************************************************************************
+Update Managememt - SPRINT5
+**********************************************************************************************************
+O365Prod - No VM
+
+
+Azure -Pass service(App service)
+
+Service Principal change CCEDoc
+Create Output folder
+
+81eb3ece-1120-4a24-982d-f982483486af -csne
+e1603d24-5049-408a-8978-7f72427db1ec - o365pro
+
+
+TMOILAB - 1195f6f5-26b3-478b-ac89-04b62f727141
+AzureSand - d0460436-a92c-4577-b0c6-62ad7aa65c5d
+Azure MFA - b67e6ecc-a24f-4f0f-94b8-adb58ec55fdd
+
+
+TMOESS-
+Location
+Plan
+Microsoft.Web-WebApp-Portal-9cec789a-bca9
+
+devastwu2appserviceum0
+
+subcription guardian guidelines
+
+
+Update Management - why not patching LINUX 8 series
+
+
+https://management.azure.com/subscriptions/1e4f30e0-ba75-4721-ad01-092454a46d8b/resourceGroups/EssAstPrdWu2RgMgmt01/providers/Microsoft.Automation/automationAccounts/PrdAstWu2Automation01/softwareUpdateConfigurationMachineRuns?api-version=2017-05-15-preview&$filter=properties/softwareUpdateConfiguration/name eq 'L-NPE-UTC-SCHEDULE-01'
+
+
+_AUTOMATION_RESOURCE_GROUP = "EssAstPrdWu2RgMgmt01"
+_AUTOMATION_ACCOUNT = "PrdAstWu2Automation01"
+_SoftwareUpdateConfigName = "W-NPE-UTC-SCHEDULE-01"
+
+# Return token based on Azure automation Runas connection
+def get_automation_runas_token(runas_connection):
+    """ Returs a token that can be used to authenticate against Azure resources """
+    from OpenSSL import crypto
+    import adal
+
+    # Get the Azure Automation RunAs service principal certificate
+    cert = automationassets.get_automation_certificate("AzureRunAsCertificate")
+    sp_cert = crypto.load_pkcs12(cert)
+    pem_pkey = crypto.dump_privatekey(crypto.FILETYPE_PEM, sp_cert.get_privatekey())
+
+    # Get run as connection information for the Azure Automation service principal
+    application_id = runas_connection["ApplicationId"]
+    thumbprint = runas_connection["CertificateThumbprint"]
+    tenant_id = runas_connection["TenantId"]
+
+    # Authenticate with service principal certificate
+    resource = "https://management.core.windows.net/"
+    authority_url = ("https://login.microsoftonline.com/" + tenant_id)
+    context = adal.AuthenticationContext(authority_url)
+    azure_credential = context.acquire_token_with_client_certificate(
+        resource,
+        application_id,
+        pem_pkey,
+        thumbprint)
+
+    # Return the token
+    return azure_credential.get('accessToken')
+	
+    #return "Hello, World!"
+    
+
+
+
+
+
+_______________________________________________________________________________
+MarketPlace_VM - Developer branch- master key word in url  in urls in different files
+IAM - (Master Branch- app_registeration_operator) - replace master keywork in Read.MD
+IAM - (Master Branch- app_registration) - replace master keywork in Read.MD
+IAM - (Master Branch -Powershell_modules) - master key word in urls in different files
+IAM - (Master Branch- rbac) - replace master keywork in Read.MD
+IAM - (Master Branch- rbac_operator) - replace master keywork in Read.MD
+
+
+
+whether vm part of UPMGMT
+vm part of update mgmt or not
+what patches installed and what patches failed
+Vm restarted or not update mgmt
+History data gets cleared
+
+nperzrwu2vmir0.corporate.t-mobile.com_6d33ade6-580f-4d5d-9a9d-6f7da33bdc22 (PrdAstWu2Automation01/nperzrwu2vmir0.corporate.t-mobile.com_6d33ade6-580f-4d5d-9a9d-6f7da33bdc22)
+
+
+store data in data store
+
+_RCJ7Dj5VS5L_HxS4-~Dtx1z8Y2oZk9Kcw
+
+Solution Design Document updated 
+    Backup & DR -       0
+    consolidated doc -  master-4
+    data security -     master -2
+                        whitelist - 14
+    H&G           -     0
+    IAM           -     blacklist -6
+    network security-   master-1
+    observability&
+    Monitoring          -whitelist-2
+    VA&UpdateMGMT       -0
+    Workload Protection- 0
+
+2nd link
+    whitelist -14
+    blacklist -3
+
+SOP Document
+    hierarchy&Governance - 0
+    IAM SOP Document     - 0
+    N/w Security SOPDOC  - 0
+    Observability and Monitoring SOP Documents  - 0
+    Update Management SOP - 0
+    Workload Protection SOP Documents - 0
+    Data Security SOP Documents -
+        Data Security_Azure ServiceBus  - whitelist -8
+        Data Security_Azure SQLMI  - 0
+        Data Security_Azure_EventHub.1,2 - whitelist -7
+        Data Security_Azure_MySQLDB     -  0
+        Data Security_Azure_POSTGRE_SQLDB - 0
+        Data Security_AzureSQLDB  -  0
+        Data Security_Data Bricks  - 0
+        Data Security_Data Factory  - 0
+        Data Security_Storage Account - whitelist -1
+        Data_Security_Azure_Cosmo_DB - 0
+        Service Bus Security Design Doc  - whitelist -6
+        Azure Security Posture Maturity  - whitelist -14
+        AZURE KEY VAULT - RUNBOOK & SCRIPTS DEPLOYMENT/ OPERATION DOCUMENT - 0
+
+
+
+machineListUrl = ("https://management.azure.com/subscriptions/" + subscription_id 
+        + "/resourceGroups/" + _AUTOMATION_RESOURCE_GROUP
+        + "/providers/Microsoft.Automation/automationAccounts/" + _AUTOMATION_ACCOUNT
+         + "/softwareUpdateConfigurationMachineRuns?api-version=2017-05-15-preview")
+#        + "/softwareUpdateConfigurationMachineRuns?api-version=2017-05-15-preview&$filter=properties/softwareUpdateConfiguration/name eq '" + _SoftwareUpdateConfigName +"'")
+
+
+Loganalytics workbook
+*********************************************************************************************
+303 Training
+
+Lab
+https://trainocate.learnondemand.net/ClassEnrollment/2400111
+
+Links
+https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.html
+https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/
+https://github.com/MicrosoftLearning/AZ-900T0x-MicrosoftAzureFundamentals
+https://docs.microsoft.com/en-us/azure/active-directory/hybrid/choose-ad-authn
+https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-health-adfs#usage-analytics-for-ad-fs
+https://github.com/Azure/azure-policy
+https://docs.microsoft.com/en-us/learn/certifications/exams/az-104
+https://docs.microsoft.com/en-us/learn/paths/az-104-manage-virtual-networks/
+https://azureprice.net/Region
+https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_10-Implement_Data_Protection.html
+
+*********************************************************************************************
+
+Notes
+ScheduleName,Reboot,OS,DayofWeek,TagName,TagValue,StartTime,DaysofWeekOccurrence
+W-NPE-UTC-SCHEDULE-04,Always,Windows,Saturday ,UpdateMgmt,Npe-Phase4,3:00 PM,Second
+W-NPE-UTC-SCHEDULE-05,Always,Windows,Thursday ,UpdateMgmt,Npe-Phase5,8:00 PM,Second
+W-NPE-UTC-SCHEDULE-06,Always,Windows,Thursday ,UpdateMgmt,Npe-Phase6,10:00 PM,Second
+L-NPE-UTC-SCHEDULE-04,Always,Linux,Saturday ,UpdateMgmt,Npe-Phase4,4:00 PM,Second
+L-NPE-UTC-SCHEDULE-05,Always,Linux,Thursday ,UpdateMgmt,Npe-Phase5,9:00 PM,Second
+L-NPE-UTC-SCHEDULE-06,Always,Linux,Thursday ,UpdateMgmt,Npe-Phase6,11:00 PM,Second
+W-PRD-UTC-SCHEDULE-05,Always,Windows,Wednesday ,UpdateMgmt,Prd-Phase5,8:30 PM,Third
+W-PRD-UTC-SCHEDULE-06,Always,Windows,Wednesday ,UpdateMgmt,Prd-Phase6,10:30 PM,Third
+L-PRD-UTC-SCHEDULE-05,Always,Linux,Wednesday ,UpdateMgmt,Prd-Phase5,9:30 PM,Third
+L-PRD-UTC-SCHEDULE-06,Always,Linux,Wednesday ,UpdateMgmt,Prd-Phase6,11:30 PM,Third
+
+
+
+
+should inform pacbot -
+check the extensions
+Need contributor access Update Management and also the subscription
+
+
+
+
+
+
+L-NPE-UTC-SCHEDULE-05
+5-6 - if required
+rest - never reboot
+
+
+
+
+
+check tags
+AKS vm, Datebricks
+
+
+Automation account hybrid worker
+0365 account
+
+Azure.EDSNPE
+Azure.ESDNPE
+Azure.IOTNPE
+Azure.K8SNPE
+Azure.TEQNPE
+
+AZURE.RZRPROD
+AZURE.ESDPRD
+
+
+L-npe-01 - Never -utc-  Pacific
+W-npe-01 - Never -utc-  Pacific
+W-prd-01 - Never -Eastern Time - permission -issue
+L-prd-01 - Never -Eastern Time - permission -isse
+W-prd-02 - Never -UTC - Done
+L-prd-02 - Never -UTC - Done
+W-npe-02 - Never -UTC - Done
+L-npe-02 - Never -UTC - Done
+W-prd-03 - Never -UTC - Done
+L-prd-03 - Never -UTC - Done
+W-npe-03 - Never -UTC - Done
+L-npe-03 - Never- UTC - Done
+W-prd-04 - Never -UTC - Done
+L-prd-04 - Never - UTC - Done
+W-npe-04 - Never- Pacific time - Done
+L-npe-04 - Never- Pacific time
+W-prd-05 - if required -Pacific time
+L-prd-05 - if required -Pacific time
+W-npe-05 - if required -Pacific time
+L-npe-05 - if required -Pacific time
+W-npe-06 - if required -Pacific time
+L-npe-06 - if required -Pacific time
+W-prd-06 - if required -Pacific time
+L-prd-06 - if required -Pacific time
+
+Tags have been updated for RZRNPE back to npe-phase1 
+
+
+k8Snpe-not machines available
+EDSNPE - No machine available
+
+
+/subscriptions/b843dcf9-6a14-49ad-a8f4-cfe6fe536915/resourceGroups/ESDNDWDEVMGMTWU2RG0/providers/Microsoft.Compute/virtualMachines/devndwadowu2vm0/extensions/MicrosoftMonitoringAgent
+
+
+ESDPROD-Start Preparing 
+IOTNPE
+TEQNPE
+
+
+Teqnpe-
+
+
+RZRPROD
+ESDPROD
+ESDNPE
+
+EDSNPE- not part of log analytics group
+
+*************************************************************************************************************
+Update Managememt - SPRINT2
+*************************************************************************************************************
+Azure.SAPNPE-no vms
+ESDPROD - True(PrdAstWu2Loganalytics01)
+Azure.IOTNPE - False(other)
+Azure.MLS - False(other)
+Azure.SEC - False(other) - jaya 
+Azure.TMOESS - True(PrdAstWu2Loganalytics01) - Jaya
+
+Add  rules in all schedule for 3 rollouts-----------------------------------------------
+*************************************************************************************************************
+*************************************************************************************************************
+TMOESS
+
+Pacbot- AKS-shashi
+
+
+Hi Jaya,
+
+PFA list of the VM's from TMOESS subscription, Tagged as NPE-Phase1 and Prd-Phase1. Can you please delete the VM's which are not required, so that we can rollout the Update Management next week.
+
+
+
+
+Hi Jaya,
+
+PFA list of the VM's from AZURE.SEC subscription.  
+
+We would like to have your inputs before rolloing out Update Management for this subscription as these VM's are critical from security prospective.
+
+Regards,
+Ankit
+
+***********************************************************************************************************************
+
+*************************************************************************************************************
+Update Managememt - SPRINT3
+*************************************************************************************************************
+Azure-Hackthon - Single VM(DataBricks)
+Azure-CIA - No VMs
+7c9afe0a-89b8-4542-8d8c-cc271800be84 - RZRNPE
+W-PRD-UTC-SCHEDULE-05,Always,Windows,Wednesday ,UpdateMgmt,Prd-Phase5,8:30 PM,Third
+W-PRD-UTC-SCHEDULE-06,Always,Windows,Wednesday ,UpdateMgmt,Prd-Phase6,10:30 PM,Third
+L-PRD-UTC-SCHEDULE-05,Always,Linux,Wednesday ,UpdateMgmt,Prd-Phase5,9:30 PM,Third
+L-PRD-UTC-SCHEDULE-06,Always,Linux,Wednesday ,UpdateMgmt,Prd-Phase6,11:30 PM,Third
+
+fd312e60-798b-4933-a4c9-66fa2697a464 - POC
+
+
+
+*********************************************************************************************************
+
+$query1Scope = @(        
+"/subscriptions/22e2445a-0984-4fa5-86a4-0280d76c4b2c/resourceGroups/resourceGroupName",
+"/subscriptions/32e2445a-0984-4fa5-86a4-0280d76c4b2d/"
+
+$scope = "/subscriptions/$($vmSubscriptionIds)"
+$QueryScope = @($scope)
+
+
+-TimeZone "Pacific Time Zone"
+
+$QueryScope = @(        
+    "/subscriptions/7c9afe0a-89b8-4542-8d8c-cc271800be84",
+    "/subscriptions/b843dcf9-6a14-49ad-a8f4-cfe6fe536915",
+    "/subscriptions/4b2a77f7-97d9-44e8-a132-c2ff5ec8d80e",
+    "/subscriptions/335dfaa9-63ae-4034-a4b8-dcf436637d2d",
+    "/subscriptions/6b2927fc-a4d1-4073-bea7-a5d37c42dcbe",
+    "/subscriptions/57d173b4-9ef9-4e99-b137-ab0dcd4ebe55",
+    "/subscriptions/1e4f30e0-ba75-4721-ad01-092454a46d8b",
+    "/subscriptions/0eab7f04-1d8e-4309-a639-2a2de1950cce",
+    "/subscriptions/19dbcfe8-2cba-4c2d-b902-0927a4b7feec"
+)
+
+AzureSD
+TMOESS
+NPE
+POC
+
+W-NPE-UTC-SCHEDULE-02,Never,Windows,Saturday,UpdateMgmt,Npe-Phase2,7:00 AM,Second
+L-NPE-UTC-SCHEDULE-02,Never,Linux,Saturday,UpdateMgmt,Npe-Phase2,8:00 AM,Second
+
+W-NPE-UTC-SCHEDULE-01,Never,Windows,Saturday,UpdateMgmt,Npe-Phase1,6:00 AM,First
+W-NPE-UTC-SCHEDULE-02,Never,Windows,Saturday,UpdateMgmt,Npe-Phase2,7:00 AM,Second
+W-NPE-UTC-SCHEDULE-03,Never,Windows,Saturday,UpdateMgmt,Npe-Phase3,11:00 AM,Second 
+W-NPE-UTC-SCHEDULE-04,Never,Windows,Saturday,UpdateMgmt,Npe-Phase4,3:00 PM,Second 
+W-NPE-UTC-SCHEDULE-05,IfRequired,Windows,Thursday,UpdateMgmt,Npe-Phase5,8:00 PM,Second
+W-NPE-UTC-SCHEDULE-06,IfRequired,Windows,Thursday,UpdateMgmt,Npe-Phase6,10:00 PM,Second
+L-NPE-UTC-SCHEDULE-01,Never,Linux,Saturday,UpdateMgmt,Npe-Phase1,8:00 AM,First
+L-NPE-UTC-SCHEDULE-02,Never,Linux,Saturday,UpdateMgmt,Npe-Phase2,8:00 AM,Second
+L-NPE-UTC-SCHEDULE-03,Never,Linux,Saturday,UpdateMgmt,Npe-Phase3,1:00 PM,Second
+L-NPE-UTC-SCHEDULE-04,Never,Linux,Saturday,UpdateMgmt,Npe-Phase4,4:00 PM,Second
+L-NPE-UTC-SCHEDULE-05,IfRequired,Linux,Thursday,UpdateMgmt,Npe-Phase5,9:00 PM,Second
+L-NPE-UTC-SCHEDULE-06,IfRequired,Linux,Thursday,UpdateMgmt,Npe-Phase6,11:00 PM,Second
+W-PRD-UTC-SCHEDULE-01,Never,Windows,Saturday,UpdateMgmt,Prd-Phase1,6:00 AM,Second
+W-PRD-UTC-SCHEDULE-02,Never,Windows,Saturday,UpdateMgmt,Prd-Phase2,7:00 AM,Third
+W-PRD-UTC-SCHEDULE-03,Never,Windows,Saturday,UpdateMgmt,Prd-Phase3,11:00 AM,Third
+W-PRD-UTC-SCHEDULE-04,Never,Windows,Saturday,UpdateMgmt,Prd-Phase4,3:00 PM,Third
+W-PRD-UTC-SCHEDULE-05,IfRequired,Windows,Wednesday ,UpdateMgmt,Prd-Phase5,8:30 PM,Third
+W-PRD-UTC-SCHEDULE-06,IfRequired,Windows,Wednesday ,UpdateMgmt,Prd-Phase6,10:30 PM,Third
+L-PRD-UTC-SCHEDULE-01,Never,Linux,Saturday,UpdateMgmt,Prd-Phase1,8:00 AM,Second
+L-PRD-UTC-SCHEDULE-02,Never,Linux,Saturday,UpdateMgmt,Prd-Phase2,8:00 AM,Third
+L-PRD-UTC-SCHEDULE-03,Never,Linux,Saturday,UpdateMgmt,Prd-Phase3,1:00 PM,Third
+L-PRD-UTC-SCHEDULE-04,Never,Linux,Saturday,UpdateMgmt,Prd-Phase4,6:00 PM,Third
+L-PRD-UTC-SCHEDULE-05,IfRequired,Linux,Wednesday ,UpdateMgmt,Prd-Phase5,9:30 PM,Third
+L-PRD-UTC-SCHEDULE-06,IfRequired,Linux,Wednesday ,UpdateMgmt,Prd-Phase6,11:30 PM,Third
+
+
+
+
+
+
+
+
+
+
+
+
+
+Actual
+_______________________________________________________________________________________________
+ScheduleName,Reboot,OS,DayofWeek,TagName,TagValue,StartTime,DaysofWeekOccurrence
+W-NPE-UTC-SCHEDULE-01,IfRequired,Windows,Saturday ,UpdateMgmt,Npe-Phase1,6:00 AM,Second
+L-NPE-UTC-SCHEDULE-01,IfRequired,Linux,Saturday ,UpdateMgmt,Npe-Phase1,8:00 AM,Second
+_______________________________________________________________________________________________
+
+
+Send-MailMessage -From $from -To $toList -Subject $Subject -Body $body -SmtpServer $smtpServer -Port $smtpPort -UseSsl -ErrorAction Stop
+
+
+$from = 'cloudsecops@t-mobile.com'
+$toList = @("ankit.rustagi1@T-Mobile.com")
+$Subject  = "Azure Notification - New Subnet Creation Detected"
+$smtpServer = 'tmobile-com0c.mail.protection.outlook.com'
+$smtpPort = 25
+$body = "Test"
+Send-MailMessage -From $from -To $toList -Subject $Subject -Body $body -SmtpServer $smtpServer -Port $smtpPort -UseSsl -ErrorAction Stop
+WARNING: The command 'Send-MailMessage' is obsolete. This cmdlet does not guarantee secure connections to SMTP servers. While there is no immediate replacement available in PowerShell, we recommend you do not use Send-MailMessage at this time. See https://aka.ms/SendMailMessage for more information.
+Send-MailMessage: Mailbox unavailable. The server response was: 5.7.606 Access denied, banned sending IP [208.54.98.6]. To request removal from this list please visit https://sender.office.com/ and follow the directions. For more information please go to  http://go.microsoft.com/fwlink/?LinkID=526655 AS(1430) [DM3NAM02FT052.eop-nam02.prod.protection.outlook.com]
+'ankit.rustagi1@t-mobile.com', 'Shashidharan.Sukumaran7@T-Mobile.com', 'Chaitanya.Uppalapati1@T-Mobile.com', 'Jaya.Krishna@T-Mobile.com', 
+
+
+
+Doc Link
+https://tmobileusa.sharepoint.com/sites/tpd_tt/teams/cst/Cloud%20Initiatives/Forms/AllIte[…]&View=%7B5AA25894%2D61FB%2D4124%2DAB48%2DFEE168AC7BCF%7D
+
+
+80HRS/12hrs/14hrs
+
+************************************************************************************************
+Dashboard
+************************************************************************************************
+
+UpdateManagemet
+Azure Policy
+Lock/unlock policy
+RBAC
+Flow log analysis(Azure)
+
+************************************************************************************************
+*********************************************************************************************
+
+
+
+
+W-NPE-UTC-SCHEDULE-01,Never,Windows,Saturday,UpdateMgmt,Npe-Phase1,6:00 AM,First
+W-NPE-UTC-SCHEDULE-02,Never,Windows,Saturday,UpdateMgmt,Npe-Phase2,7:00 AM,Second
+W-NPE-UTC-SCHEDULE-03,Never,Windows,Saturday,UpdateMgmt,Npe-Phase3,11:00 AM,Second 
+W-NPE-UTC-SCHEDULE-04,Never,Windows,Saturday,UpdateMgmt,Npe-Phase4,3:00 PM,Second 
+W-NPE-UTC-SCHEDULE-05,IfRequired,Windows,Thursday,UpdateMgmt,Npe-Phase5,8:00 PM,Second
+W-NPE-UTC-SCHEDULE-06,IfRequired,Windows,Thursday,UpdateMgmt,Npe-Phase6,10:00 PM,Second
+L-NPE-UTC-SCHEDULE-01,Never,Linux,Saturday,UpdateMgmt,Npe-Phase1,8:00 AM,First
+L-NPE-UTC-SCHEDULE-02,Never,Linux,Saturday,UpdateMgmt,Npe-Phase2,8:00 AM,Second
+L-NPE-UTC-SCHEDULE-03,Never,Linux,Saturday,UpdateMgmt,Npe-Phase3,1:00 PM,Second
+L-NPE-UTC-SCHEDULE-04,Never,Linux,Saturday,UpdateMgmt,Npe-Phase4,4:00 PM,Second
+L-NPE-UTC-SCHEDULE-05,IfRequired,Linux,Thursday,UpdateMgmt,Npe-Phase5,9:00 PM,Second
+L-NPE-UTC-SCHEDULE-06,IfRequired,Linux,Thursday,UpdateMgmt,Npe-Phase6,11:00 PM,Second
+W-PRD-UTC-SCHEDULE-01,Never,Windows,Saturday,UpdateMgmt,Prd-Phase1,6:00 AM,Second
+W-PRD-UTC-SCHEDULE-02,Never,Windows,Saturday,UpdateMgmt,Prd-Phase2,7:00 AM,Third
+W-PRD-UTC-SCHEDULE-03,Never,Windows,Saturday,UpdateMgmt,Prd-Phase3,11:00 AM,Third
+W-PRD-UTC-SCHEDULE-04,Never,Windows,Saturday,UpdateMgmt,Prd-Phase4,3:00 PM,Third
+W-PRD-UTC-SCHEDULE-05,IfRequired,Windows,Wednesday ,UpdateMgmt,Prd-Phase5,8:30 PM,Third
+W-PRD-UTC-SCHEDULE-06,IfRequired,Windows,Wednesday ,UpdateMgmt,Prd-Phase6,10:30 PM,Third
+L-PRD-UTC-SCHEDULE-01,Never,Linux,Saturday,UpdateMgmt,Prd-Phase1,8:00 AM,Second
+L-PRD-UTC-SCHEDULE-02,Never,Linux,Saturday,UpdateMgmt,Prd-Phase2,8:00 AM,Third
+L-PRD-UTC-SCHEDULE-03,Never,Linux,Saturday,UpdateMgmt,Prd-Phase3,1:00 PM,Third
+L-PRD-UTC-SCHEDULE-04,Never,Linux,Saturday,UpdateMgmt,Prd-Phase4,6:00 PM,Third
+L-PRD-UTC-SCHEDULE-05,IfRequired,Linux,Wednesday ,UpdateMgmt,Prd-Phase5,9:30 PM,Third
+L-PRD-UTC-SCHEDULE-06,IfRequired,Linux,Wednesday ,UpdateMgmt,Prd-Phase6,11:30 PM,Third
+
+
+ 
+W-NPE-UTC-SCHEDULE-07,Never,Windows,Saturday,UpdateMgmt,Npe-Phase7,6:00 AM,First
+W-NPE-UTC-SCHEDULE-08,Never,Windows,Saturday,UpdateMgmt,Npe-Phase8,6:00 AM,First
+L-NPE-UTC-SCHEDULE-07,Never,Linux,Saturday,UpdateMgmt,Npe-Phase7,8:00 AM,First
+L-NPE-UTC-SCHEDULE-08,Never,Linux,Saturday,UpdateMgmt,Npe-Phase8,8:00 AM,First
+W-PRD-UTC-SCHEDULE-07,IfRequired,Windows,Wednesday ,UpdateMgmt,Prd-Phase7,10:30 PM,Third
+W-PRD-UTC-SCHEDULE-08,IfRequired,Windows,Wednesday ,UpdateMgmt,Prd-Phase8,10:30 PM,Third
+L-PRD-UTC-SCHEDULE-07,Never,Linux,Saturday,UpdateMgmt,Prd-Phase7,8:00 AM,Second
+L-PRD-UTC-SCHEDULE-08,Never,Linux,Saturday,UpdateMgmt,Prd-Phase8,8:00 AM,Second
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLQsLYqVqVXRaHoSpBSFK+YvEsPYUHRVfrGSt+dVzhkRbtVH0OGmLYWGn//AdUfk7obgEys0UlJ5Uqb3XG0YZcJtf710hqPZ+TflYYc/NolqHjrbaLFRvR7QOURUprSUgBIkQ2wHHGkPtxm0lMORCBPNZjZX5wqiM2qViq63Dm/q0X6AhXjhrbWp2d4ILrkAEtvNDIoXsbW8qT1LVQmXsPTd8wRqw0dihcdeXMR+hEDgy1/jmwYOB8EyZyWu3h6osjMWS6Jv7Y6/z+Zh5uqI2RiVOzagkpEiMLu3dzWf1hxHXMoSNdnjiAsX/0zHVslMbVHKJwPDmJqRjerul805Q5
+
+
+npe7 every tuesday 8am 
+npe8 2nd and 4th thursday 8am
+
+
+
+Ishu Aggrawal
+
+Data Egress Cost
+Data Ingestion Cost
+https://gitlab.com/tmobile/cloudsecurity/azure-security/heirarchy_governance.git
+
+$categories = @("Security Center", "Compute", "Data Factory", "SQL", "Network", "Storage", "Event Hub", "App Service", "cosmos DB", "Key Vault", "Data Lake", "HDInsight", "")
+#$categories = @('Compute', "SQL", "Storage")
+$date = Get-Date -Format "dd-MM-yyyy"
+$path = "../output"
+$comparisionOutputLoc = "$path/PolicyComparisionResult_$date.csv"
+if (-not(Test-Path -Path $comparisionOutputLoc)) {
+    Add-Content -Path $comparisionOutputLoc  -Value '"Policy Name","Policy Id","Version", "Main Category", "Status"'
+    "Created Comparision File Named '$comparisionOutputLoc'."
+} else {
+    "Comparision File Already Exist Named '$comparisionOutputLoc'."
+}
+if (-not(Test-Path -Path "$path/latest")) {
+            try {
+                New-Item -Path "$path" -Name "latest" -ItemType "directory" | Out-Null #-Force
+            } catch {
+                Write-Error -Message "Unable to create directory '$DirectoryToCreate'. Error was: $_" -ErrorAction Stop
+            }
+            "Successfully created directory '$path/latest'."
+} else {
+        Move-Item -Path "$path/latest" -Destination "$path/backup"
+        "Successfully Moved directory '$path/latest' AS '$path/backup'."
+}
+foreach ($category in $categories){
+    if (-not(Test-Path -Path "$path/latest/$category")) {
+            try {
+                New-Item -Path "$path/latest/" -Name "$category" -ItemType "directory" | Out-Null #-Force
+            } catch {
+                Write-Error -Message "Unable to create directory '$DirectoryToCreate'. Error was: $_" -ErrorAction Stop
+            }
+            "Successfully created directory '$path/latest/$category'."
+    } else {
+        "Directory already existed '$path/latest/$category'."
+    }
+    $policies = Get-AzPolicyDefinition | where-object {$_.Properties.metadata.category -eq $category}
+    foreach ($policy in $policies){
+            try{
+                $policy.properties | ConvertTo-Json -Depth 12 | `    
+                Out-File "$path/latest/$category/$($policy.properties.DisplayName).json"
+            } catch {
+                Write-Error -Message "Unable to Download Policy Name '$policy.properties.DisplayName'. Error was: $_"
+            }
+        }
+
+    "Comparing the objects"
+    if ((Test-Path -Path "$path/latest/$category") -and (Test-Path -Path "$path/backup/$category")) {
+        "Both folders exist"
+        $backupPolicyFiles = Get-ChildItem "$path/backup/$category" -Recurse
+        $latestPolicyFiles = Get-ChildItem "$path/latest/$category" -Recurse
+        $backupPolicyFileNames = @()
+        $latestPolicyFileNames = @()
+        foreach ($file in $backupPolicyFiles){
+            $backupPolicyFileNames += $file.Name
+        }
+        foreach ($file in $latestPolicyFiles){
+            $latestPolicyFileNames += $file.Name
+        }
+        $policies = Get-AzPolicyDefinition | where-object {$_.Properties.metadata.category -eq $category}
+        foreach($policy in $policies){
+            $policyFileName = "$($policy.properties.DisplayName).json"
+            if (($backupPolicyFileNames.Contains($policyFileName)) -and ($latestPolicyFileNames.Contains($policyFileName))){
+                "Policy exist"
+                $latestFIleHash = Get-FileHash "$path/latest/$category\$policyFileName"
+                $backupFileHash = Get-FileHash "$path/backup/$category\$policyFileName"
+                if ($latestFIleHash.Hash -eq $backupFileHash.Hash){
+                    "Files are same"
+                    $NewLine = "{0},{1}, {2}, {3}, {4}" -f $policy.Properties.DisplayName,$policy.PolicyDefinitionId, $policy.Properties.Metadata.version, $category, 'Unchanged'
+                    $NewLine | add-content -path $comparisionOutputLoc
+                } else {
+                    $NewLine = "{0},{1}, {2}, {3}, {4}" -f $policy.Properties.DisplayName,$policy.PolicyDefinitionId, $policy.Properties.Metadata.version, $category, 'Changed'
+                    $NewLine | add-content -path $comparisionOutputLoc
+                }
+            } elseif (-not($backupPolicyFileNames.Contains($policyFileName)) -and ($latestPolicyFileNames.Contains($policyFileName))) {
+                "Policy Does not Exist"
+                $NewLine = "{0},{1}, {2}, {3}, {4}" -f $policy.Properties.DisplayName,$policy.PolicyDefinitionId, $policy.Properties.Metadata.version, $category, 'New'
+                $NewLine | add-content -path $comparisionOutputLoc
+            } elseif (-not($latestPolicyFileNames.Contains($policyFileName)) -and ($backupPolicyFileNames.Contains($policyFileName))) {
+                "Policy Does not Exist"
+                $NewLine = "{0},{1}, {2}, {3}, {4}" -f $policy.Properties.DisplayName,$policy.PolicyDefinitionId, $policy.Properties.Metadata.version, $category, 'Deleted'
+                $NewLine | add-content -path $comparisionOutputLoc
+            }
+
+        }
+    } else {
+    "Downloading Policies for the the First Time, So both folders(Latest and Backup) does not exist"
+    }
+}
+
+
+
+
+Schema----for Api(Update Management)
+patch details
+
+
+FetchVms:(Get Request):
+	{
+		'params":{
+			'subscription': 'String: Name of the Subscription',
+			'resourcegroup': 'String: Name of the Resource Group',
+			'Schedule': 'String: Name of the Update Management Schedule'
+		},
+		'Authorization-header': 'Authentication Token'
+	}
+
+FetchVms(Response):
+	{
+		'vmList': {
+			'Name': 'String: Name of the VM',
+			'subscription': 'String: Name of the subscription of VM',
+			'resourcegroup': 'String: Name of the Resource Group of VM'
+			'schedule': 'String: Name of the Update Management Schedule',
+			'tag': 'String: VM tag value',
+			'last updated': 'Date: Last updated by Update Management',
+			'last update status': 'String: whether update Successfully or failed',
+			'next schedule run': 'Date: next schedule run'
+ 		}
+	}
+
+FetchUpdateDetails:(Get Request)
+	{
+		'params':{
+			'name': 'String: Name of the vm',
+			'days': 'Int: number of days, update history of vm'
+		},
+
+		'Authorization-header': 'Authentication Token'
+	}
+FetchUpdateDetails:(Response):
+	{
+		'result':{	
+			'success':[
+				'Product', 'Classification', 'Time Generated', 'Title'
+			],
+			'failure':
+				[
+				'Product', 'Classification', 'Time Generated', 'Title'	
+			]
+		}
+	}
+
+	DEVADSEVTCDEV02
+
+Heartbeat | where ComputerEnvironment == 'Non-Azure' and ResourceGroup == 'essAstDevWu2RgSecurity' | distinct Computer
