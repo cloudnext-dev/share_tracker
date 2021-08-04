@@ -19,10 +19,10 @@ class populateTables():
 			asset_dict['AssetId'] = row[0]
 			asset_dict['AccountId'] = account
 			asset_dict['StrategyId'] = strategy
-			asset_dict['EntryPrice'] = float(row[3])
+			asset_dict['EntryPrice'] = float(row[1])
 			argList.append(asset_dict)
 		#results = []
-		with concurrent.futures.ThreadPoolExecutor(max_workers=30) as executor:
+		with concurrent.futures.ThreadPoolExecutor(max_workers=120) as executor:
 			executor.map(lambda f: AssetDetails.objects.create(**f), argList)
 
 		result = "Inserted Values in Database"
