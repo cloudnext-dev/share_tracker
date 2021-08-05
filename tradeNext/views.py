@@ -86,12 +86,12 @@ def getIndustry(request):
         }
         return JsonResponse(data, status = 200)
 @force_maintenance_mode_off
-def getBrokers(request):
+def getAccounts(request):
     if request.method == "GET" and request.is_ajax():
-        brokers = Broker.objects.all().order_by('BrokerAccountId').values_list('BrokerAccountId').distinct()
-        brokers = [i[0] for i in list(brokers)]
+        accounts = Account.objects.all().order_by('AccountName').values_list('AccountName').distinct()
+        accounts = [i[0] for i in list(accounts)]
         data = {
-            "brokers": brokers, 
+            "accounts": accounts, 
         }
         return JsonResponse(data, status = 200)
 @force_maintenance_mode_off

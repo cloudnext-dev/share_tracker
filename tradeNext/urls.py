@@ -12,7 +12,7 @@ urlpatterns = [
     path("suggest_listing/", SuggestedAssetListing.as_view(), name = 'suggestlisting'),
     path("ajax/sectors/", getSectors, name = 'get_sectors'),
     path("ajax/industries/", getIndustry, name = 'get_industry'),
-    path("ajax/brokers/", getBrokers, name = 'get_brokers'),
+    path("ajax/accounts/", getAccounts, name = 'get_accounts'),
     path("ajax/strategies/", getStrategy, name = 'get_strategy'),
     path("uploadAssets/", uploadAssets, name = 'uploadAssetFile')
 ]

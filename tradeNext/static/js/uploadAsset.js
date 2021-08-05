@@ -3,22 +3,22 @@
 var send_data = {}
 
 $(document).ready(function () {
-    getBrokers();
+    getAccounts();
     getStrategies();
 })
-function getBrokers() {
-    let url = $("#brokers").attr("url");
+function getAccounts() {
+    let url = $("#accounts").attr("url");
     $.ajax({
         method: 'GET',
         url: url,
         data: {},
         success: function (result) {
 
-            brokers_option = "<option value='all' selected>All Brokers</option>";
-            $.each(result["brokers"], function (a, b) {
-                brokers_option += "<option>" + b + "</option>"
+            accounts_option = "<option value='all' selected>All Accounts</option>";
+            $.each(result["accounts"], function (a, b) {
+                accounts_option += "<option>" + b + "</option>"
             });
-            $("#brokers").html(brokers_option)
+            $("#accounts").html(accounts_option)
         },
         error: function(response){
             console.log(response)
