@@ -6,4 +6,4 @@ class AssetDetailsSerializers(serializers.ModelSerializer):
 	AccountId = serializers.CharField(source='AccountId.BrokerId.BrokerAccountId')
 	class Meta:
 	    model = AssetDetails
-	    fields = ('AssetId', 'AccountId', 'StrategyId', 'EntryPrice', 'AvgEntryPoint1', 'AvgEntryPoint2', 'TargetPrice', 'Sector', 'Industry', 'Beta', 'NextEarningDate', 'CurrentMarketPrice', 'EntryPriceDiff', 'Avg1Diff', 'Avg2Diff', 'Quantity')
+	    fields = ('AssetId', 'AccountId', 'StrategyId', 'EntryPrice', 'AvgEntryPoint1', 'AvgEntryPoint2', 'TargetPrice', 'Sector', 'Industry', 'Beta', 'NextEarningDate', 'CurrentMarketPrice', 'EntryPriceDiff', 'Avg1Diff', 'Avg2Diff', 'Quantity', 'LastUpdatedOn')

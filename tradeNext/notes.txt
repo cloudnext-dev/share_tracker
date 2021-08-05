@@ -58,6 +58,8 @@ finnhub.io
 
 Suggested Trades:
 
+  suggestrade when entry price diff in -ve only
+
 Create Md5 files and update the Azure Intiative
 Zoom Meeting: https://ust-global.zoom.us/j/95284493843
 Meeting ID: 952 8449 3843
@@ -1138,3 +1140,164 @@ FetchUpdateDetails:(Response):
 	DEVADSEVTCDEV02
 
 Heartbeat | where ComputerEnvironment == 'Non-Azure' and ResourceGroup == 'essAstDevWu2RgSecurity' | distinct Computer
+
+
+
+
+
+*****************************************************************
+image:
+    name: registry.gitlab.com/tmobile/cloudsecurity/azure-security/network-security/powershell:v1.0.0
+#image: ubuntu
+
+stages:
+    - GetRepo
+    - GetPolicies
+
+Get List of Policies:
+    stage: GetPolicies
+    script:
+    - pwsh -C login-azaccount    
+    - cd runners
+    - ls -al
+    - chmod +x ./getAzurePolicy.ps1
+    - pwsh ./getAzurePolicy.ps1
+    artifacts:
+     paths:
+        - output/
+    when: manual
+
+Get Gitlab Repo:
+    stage: GetRepo
+    before_script:
+    - apt-get update -qq && apt-get install -y -qq git 
+    - git --version
+    #- apt-get update -y && apt-get install -yqqf openssh-client git unzip sshpass rsync --fix-missing
+    #- 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    #- mkdir -p ~/.ssh
+    #- echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    #- cp runners/id_ras /root/.ssh/id_ras
+    #- cat ~/.ssh/id_rsa
+    #- echo "permission before"
+    #- ls -l /root/.ssh/id_rsa
+    #- chmod 600 ~/.ssh/id_rsa
+    #- echo "permission after"
+    #- ls -l /root/.ssh/id_rsa
+    #- pwd
+    #- eval $(ssh-agent -s)
+    #- ssh-add ~/.ssh/id_rsa
+    #- chmod 600 ~/.ssh/id_rsa
+    #- chmod 600 ~/.ssh/id_rsa.pub
+    #- ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+    #- chmod 644 ~/.ssh/known_hosts
+    - git config --global user.email "ankit.rustagi1@t-mobile.com"
+    - git config --global user.name "arustag1"
+    - echo "$azure_policy_token"
+    script:
+    #- pwsh -C login-azaccount   
+    - cd runners
+    #- mkdir -p test
+    #- cd test
+    #- git clone http://gitlab-ci-token:$azure_policy_token@gitlab.com/tmobile/cloudsecurity/azure-security/heirarchy_governance.git
+    #- cd heirarchy_governance
+    #- git status
+    #- git checkout -b policy_dev
+    #- mkdir -p output
+    #- touch output/abc.txt
+    #- git add .
+    #- git commit -m "Added new branch"
+    #- git push origin policy_dev
+    - chmod +x ./getAzureRepo.sh
+    - sh ./getAzureRepo.sh
+    artifacts:
+     paths:
+        - output/
+    when: manual
+****************************************************************************
+$categories = @("Security Center", "Compute", "Data Factory", "SQL", "Network", "Storage", "Event Hub", "App Service", "cosmos DB", "Key Vault", "Data Lake", "HDInsight", "")
+#$categories = @('Compute', "SQL", "Storage")
+$date = Get-Date -Format "dd-MM-yyyy"
+$path = "../output/heirarchy_governance"
+#$comparisionOutputLoc = "$path/PolicyComparisionResult_$date.csv"
+#if (-not(Test-Path -Path $comparisionOutputLoc)) {
+#    Add-Content -Path $comparisionOutputLoc  -Value '"Policy Name","Policy Id","Version", "Main Category", "Status"'
+#    "Created Comparision File Named '$comparisionOutputLoc'."
+#} else {
+#    "Comparision File Already Exist Named '$comparisionOutputLoc'."
+#}
+if (-not(Test-Path -Path "$path/latest")) {
+            try {
+                New-Item -Path "$path" -Name "latest" -ItemType "directory" | Out-Null #-Force
+            } catch {
+                Write-Error -Message "Unable to create directory '$DirectoryToCreate'. Error was: $_" -ErrorAction Stop
+            }
+            "Successfully created directory '$path/latest'."
+} else {
+        Move-Item -Path "$path/latest" -Destination "$path/backup"
+        "Successfully Moved directory '$path/latest' AS '$path/backup'."
+}
+foreach ($category in $categories){
+    if (-not(Test-Path -Path "$path/latest/$category")) {
+            try {
+                New-Item -Path "$path/latest/" -Name "$category" -ItemType "directory" | Out-Null #-Force
+            } catch {
+                Write-Error -Message "Unable to create directory '$DirectoryToCreate'. Error was: $_" -ErrorAction Stop
+            }
+            "Successfully created directory '$path/latest/$category'."
+    } else {
+        "Directory already existed '$path/latest/$category'."
+    }
+    $policies = Get-AzPolicyDefinition | where-object {$_.Properties.metadata.category -eq $category}
+    foreach ($policy in $policies){
+            try{
+                $policy.properties | ConvertTo-Json -Depth 12 | `    
+                Out-File "$path/latest/$category/$($policy.properties.DisplayName).json"
+            } catch {
+                Write-Error -Message "Unable to Download Policy Name '$policy.properties.DisplayName'. Error was: $_"
+            }
+        }
+
+    "Comparing the objects"
+    if ((Test-Path -Path "$path/latest/$category") -and (Test-Path -Path "$path/backup/$category")) {
+        "Both folders exist"
+        $backupPolicyFiles = Get-ChildItem "$path/backup/$category" -Recurse
+        $latestPolicyFiles = Get-ChildItem "$path/latest/$category" -Recurse
+        $backupPolicyFileNames = @()
+        $latestPolicyFileNames = @()
+        foreach ($file in $backupPolicyFiles){
+            $backupPolicyFileNames += $file.Name
+        }
+        foreach ($file in $latestPolicyFiles){
+            $latestPolicyFileNames += $file.Name
+        }
+        $policies = Get-AzPolicyDefinition | where-object {$_.Properties.metadata.category -eq $category}
+        foreach($policy in $policies){
+            $policyFileName = "$($policy.properties.DisplayName).json"
+            if (($backupPolicyFileNames.Contains($policyFileName)) -and ($latestPolicyFileNames.Contains($policyFileName))){
+                "Policy exist"
+                $latestFIleHash = Get-FileHash "$path/latest/$category\$policyFileName"
+                $backupFileHash = Get-FileHash "$path/backup/$category\$policyFileName"
+                if ($latestFIleHash.Hash -eq $backupFileHash.Hash){
+                    "Files are same"
+                    $NewLine = "{0},{1}, {2}, {3}, {4}" -f $policy.Properties.DisplayName,$policy.PolicyDefinitionId, $policy.Properties.Metadata.version, $category, 'Unchanged'
+                    $NewLine | add-content -path $comparisionOutputLoc
+                } else {
+                    $NewLine = "{0},{1}, {2}, {3}, {4}" -f $policy.Properties.DisplayName,$policy.PolicyDefinitionId, $policy.Properties.Metadata.version, $category, 'Changed'
+                    $NewLine | add-content -path $comparisionOutputLoc
+                }
+            } elseif (-not($backupPolicyFileNames.Contains($policyFileName)) -and ($latestPolicyFileNames.Contains($policyFileName))) {
+                "Policy Does not Exist"
+                $NewLine = "{0},{1}, {2}, {3}, {4}" -f $policy.Properties.DisplayName,$policy.PolicyDefinitionId, $policy.Properties.Metadata.version, $category, 'New'
+                $NewLine | add-content -path $comparisionOutputLoc
+            } elseif (-not($latestPolicyFileNames.Contains($policyFileName)) -and ($backupPolicyFileNames.Contains($policyFileName))) {
+                "Policy Does not Exist"
+                $NewLine = "{0},{1}, {2}, {3}, {4}" -f $policy.Properties.DisplayName,$policy.PolicyDefinitionId, $policy.Properties.Metadata.version, $category, 'Deleted'
+                $NewLine | add-content -path $comparisionOutputLoc
+            }
+
+        }
+    } else {
+    "Downloading Policies for the the First Time, So both folders(Latest and Backup) does not exist"
+    }
+}
+******************************************************************************

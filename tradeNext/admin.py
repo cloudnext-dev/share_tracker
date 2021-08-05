@@ -12,7 +12,7 @@ class BrokerAdmin(admin.ModelAdmin):
 	search_fields = ("BrokerName",)
 
 class AccountAdmin(admin.ModelAdmin):
-	list_display = ('AccountId', 'BrokerId', 'ConnectionStatus', 'SpendLimit')
+	list_display = ('AccountId', 'BrokerId', 'ConnectionStatus', 'SpendLimit', 'AccountName')
 	list_filter = ("AccountId", 'BrokerId','SpendLimit')
 	search_fields = ("SpendLimit",)	
 
@@ -20,8 +20,8 @@ class StrategyAdmin(admin.ModelAdmin):
 	list_display = ('StrategyId', 'StrategyName', 'StrategyType', 'MaxInvestment', 'TargetPrice', 'AvgPoint1', 'AvgPoint2', 'TotalFundAllocated')
 
 class AssetDetailsAdmin(admin.ModelAdmin):
-	list_display = ('AssetId', 'AccountId', 'StrategyId', 'EntryPrice', 'AvgEntryPoint1', 'AvgEntryPoint2', 'TargetPrice', 'Sector', 'Industry', 'Beta', 'NextEarningDate', 'CurrentMarketPrice', 'EntryPriceDiff', 'Avg1Diff', 'Avg2Diff', 'Quantity')
-	readonly_fields = ('AvgEntryPoint1', 'AvgEntryPoint2', 'TargetPrice', 'Sector', 'Industry', 'NextEarningDate', 'EntryPriceDiff', 'Avg1Diff', 'Avg2Diff', 'Quantity',)
+	list_display = ('AssetId', 'AccountId', 'StrategyId', 'EntryPrice', 'AvgEntryPoint1', 'AvgEntryPoint2', 'TargetPrice', 'Sector', 'Industry', 'Beta', 'NextEarningDate', 'CurrentMarketPrice', 'EntryPriceDiff', 'Avg1Diff', 'Avg2Diff', 'Quantity', 'LastUpdatedOn')
+	readonly_fields = ('AvgEntryPoint1', 'AvgEntryPoint2', 'TargetPrice', 'Sector', 'Industry', 'NextEarningDate', 'EntryPriceDiff', 'Avg1Diff', 'Avg2Diff', 'Quantity', 'LastUpdatedOn')
 
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Broker, BrokerAdmin)

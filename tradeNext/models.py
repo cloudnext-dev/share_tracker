@@ -2,6 +2,7 @@ from django.db import models
 from decimal import Decimal
 import yfinance as yf
 from yahoo_fin import stock_info as si
+from datetime import datetime
 
 class Customer(models.Model):
     UserId = models.AutoField(primary_key=True)
@@ -29,6 +30,7 @@ class Broker(models.Model):
 
 class Account(models.Model):
 	AccountId = models.AutoField(primary_key=True)
+	AccountName = models.CharField(max_length=50, default='Hello')
 	UserId = models.ForeignKey(Customer, on_delete=models.CASCADE)
 	BrokerId = models.ForeignKey(Broker, on_delete=models.CASCADE)
 	ConnectionStatus = models.BooleanField(default=False)
@@ -74,6 +76,7 @@ class AssetDetails(models.Model):
 	Industry = models.CharField(max_length=50)
 	Beta = models.FloatField(default=Decimal(0.00))
 	NextEarningDate = models.DateTimeField(null=True, blank=True)
+	LastUpdatedOn = models.DateTimeField(default=datetime.now, blank=True)
 
 	class Meta:
 		verbose_name = 'AssetDetails'
@@ -106,6 +109,7 @@ class AssetDetails(models.Model):
 			self.Quantity = minQuantity
 		else:
 			self.Quantity = maxQuantity
+		self.LastUpdatedOn = datetime.now()
 		super(AssetDetails, self).save(*args, **kwargs)
 	
 
