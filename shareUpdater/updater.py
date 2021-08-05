@@ -12,5 +12,5 @@ def update_stock():
 
 def start():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(update_stock, 'interval', minutes=15)
+    scheduler.add_job(update_stock, 'interval', minutes=10)
     scheduler.start()
