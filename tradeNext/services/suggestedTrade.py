@@ -16,7 +16,7 @@ class suggestedTrade():
 			stInfo = Strategy.objects.get(StrategyId = strategy)
 			for sector in self.sectors:
 				queryList = AssetDetails.objects.all()
-				queryList = queryList.filter(Sector = sector, StrategyId = strategy).order_by("EntryPriceDiff")
+				queryList = queryList.filter(Sector = sector, StrategyId = strategy, EntryPriceDiff__lte = 0).order_by("EntryPriceDiff")
 				if len(queryList) >= stInfo.maxTradePerSector:
 					queryList = queryList.filter(Sector = sector, StrategyId = strategy).order_by("EntryPriceDiff")[:stInfo.maxTradePerSector]
 				else:
