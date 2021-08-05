@@ -21,25 +21,8 @@ class populateTables():
 			asset_dict['StrategyId'] = strategy
 			asset_dict['EntryPrice'] = float(row[1])
 			argList.append(asset_dict)
-		#results = []
-		with concurrent.futures.ThreadPoolExecutor(max_workers=120) as executor:
+		with concurrent.futures.ThreadPoolExecutor(max_workers=60) as executor:
 			executor.map(lambda f: AssetDetails.objects.create(**f), argList)
 
 		result = "Inserted Values in Database"
-		#insertedIndex = []	
-		#for result in results:
-		#	print('Hello------------------------>',result)
-		#	insertedIndex.append(result.__next__().id)
-		#print(insertedIndex)
-		"""
-		try:
-			assetInfo = AssetDetails.objects.create(**asset_dict)
-			insertedList.append(row[0])
-			print('Successfully Inserted --->',assetInfo)
-		except:
-			print('Failed to Insert--->',row[0])
-			notInsertedList.append(row[0])
-			pass
-		"""
-		#return {'inserted': insertedList, 'notInserted': notInsertedList}
 		return result
