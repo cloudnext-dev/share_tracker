@@ -58,8 +58,11 @@ finnhub.io
 
 Suggested Trades:
 
+<<<<<<< Updated upstream
   suggestrade when entry price diff in -ve only
 
+=======
+>>>>>>> Stashed changes
 Create Md5 files and update the Azure Intiative
 Zoom Meeting: https://ust-global.zoom.us/j/95284493843
 Meeting ID: 952 8449 3843
@@ -114,6 +117,7 @@ maxTrade = 3
 
 
 
+<<<<<<< Updated upstream
 Azure Devops
 csv upload 
 
@@ -1301,3 +1305,6 @@ foreach ($category in $categories){
     }
 }
 ******************************************************************************
+=======
+0.3gb(daily)/413vm=1mb data daily
+>>>>>>> Stashed changes
