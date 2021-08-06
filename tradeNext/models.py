@@ -87,17 +87,19 @@ class AssetDetails(models.Model):
 
 	def save(self, *args, **kwargs):
 		stInfo = Strategy.objects.get(StrategyName=self.StrategyId)
+		self.CurrentMarketPrice = si.get_live_price(self.AssetId)
 		self.AvgEntryPoint1 = self.EntryPrice - (self.EntryPrice*stInfo.AvgPoint1/100)
 		self.AvgEntryPoint2 = self.AvgEntryPoint1 - (self.AvgEntryPoint1*stInfo.AvgPoint2/100)
 		self.TargetPrice = self.EntryPrice + (self.EntryPrice*stInfo.TargetPrice/100)
-		stockInfo = yf.Ticker(self.AssetId)
-		self.Sector = stockInfo.info.get('sector', 'N/a')
-		self.Industry = stockInfo.info.get('industry', 'N/a')
-		try:
-			self.NextEarningDate = si.get_next_earnings_date(self.AssetId)
-		except:
-			pass
-		self.CurrentMarketPrice = si.get_live_price(self.AssetId)
+		if not self.Sector and not self.Industry:
+			stockInfo = yf.Ticker(self.AssetId)
+			self.Sector = stockInfo.info.get('sector', 'N/a')
+			self.Industry = stockInfo.info.get('industry', 'N/a')
+		if not self.NextEarningDate:
+			try:
+				self.NextEarningDate = si.get_next_earnings_date(self.AssetId)
+			except:
+				pass
 		self.EntryPriceDiff = self._percent_diff(self.CurrentMarketPrice, self.EntryPrice)
 		self.Avg1Diff = self._percent_diff(self.CurrentMarketPrice, self.AvgEntryPoint1)
 		self.Avg2Diff = self._percent_diff(self.CurrentMarketPrice, self.AvgEntryPoint2)

@@ -108,9 +108,10 @@ def getStrategy(request):
 def uploadAssets(request):
 	if request.method == 'POST' and request.FILES.get('assetFile') and request.FILES.get('assetFile').content_type == 'application/vnd.ms-excel':
 		assetFile = request.FILES['assetFile']
-		brokerAccountId = request.POST.get('brokers')
-		brokerObj = Broker.objects.get(BrokerAccountId = brokerAccountId)
-		accountObj = Account.objects.get(BrokerId = brokerObj.BrokerId)
+		#brokerAccountId = request.POST.get('brokers')
+		#brokerObj = Broker.objects.get(BrokerAccountId = brokerAccountId)
+		accountName = request.POST.get('accounts')
+		accountObj = Account.objects.get(AccountName = accountName)
 		strategyName = request.POST.get('strategies')
 		strategyObj = Strategy.objects.get(StrategyName = strategyName)
 		fs = FileSystemStorage()
