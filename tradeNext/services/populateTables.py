@@ -20,6 +20,7 @@ class populateTables():
 			asset_dict['AccountId'] = account
 			asset_dict['StrategyId'] = strategy
 			asset_dict['EntryPrice'] = float(row[1])
+			#AssetDetails.objects.create(**asset_dict)
 			argList.append(asset_dict)
 		with concurrent.futures.ThreadPoolExecutor(max_workers=60) as executor:
 			executor.map(lambda f: AssetDetails.objects.create(**f), argList)
