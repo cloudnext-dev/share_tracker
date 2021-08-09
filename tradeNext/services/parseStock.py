@@ -1,16 +1,22 @@
 import requests
 from lxml import html
+import random
 class parseStock:
 	def __init__(self, ticker, type):
 		if type == 'price':
 			url = "http://finance.yahoo.com/quote/%s?p=%s" % (ticker, ticker)
 		else:
 			url = "https://finance.yahoo.com/quote/%s/profile?p=%s" % (ticker, ticker)
-		response = requests.get(url, verify=False, headers=self._get_headers(), timeout=30)
-		try:
-			self.parsedStock = html.fromstring(response.text)
-		except:
-			pass
+		for i in range(3):
+			try:
+				response = requests.get(url, verify=False, headers=self._get_headers(), timeout=30)
+				self.parsedStock = html.fromstring(response.text)
+			except requests.exceptions.RequestException as e:
+				continue 
+			else:
+				break
+		else:
+			raise Exception("Unable to connect to a new server. Please check your internet connection.\n")	
 
 	def _get_headers(self):
 		return {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
