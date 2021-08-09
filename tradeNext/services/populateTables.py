@@ -28,15 +28,15 @@ class populateTables():
 			result_futures = executor.map(lambda f: AssetDetails.objects.create(**f), argList)
 			inserted = []
 			failed = []
-		"""
+		
 		for future in result_futures:
 			try:
 				inserted.append((future.AssetId, future.EntryPrice))
-			except Exception as e:
+			except:
 				failed.append((future.AssetId, future.EntryPrice))
-				print('e is', e, type(e))
+				#print('e is', e, type(e))
 				pass
-		"""
+		
 		resultDict['success'] = inserted
 		resultDict['failed'] = failed
 		result = "Inserted Values in Database"
