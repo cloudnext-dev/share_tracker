@@ -91,10 +91,10 @@ class AssetDetails(models.Model):
 		#self.CurrentMarketPrice = si.get_live_price(self.AssetId)
 		stockInfo = parseStock.parseStock(self.AssetId, 'price')
 		stockPrice = stockInfo.get_price()
-		if ',' in stockPrice:
+		if stockPrice and ',' in stockPrice:
 			stockPrice = stockPrice.replace(',', '')
 		self.CurrentMarketPrice = float(stockPrice)
-		if NextEarningDate and not self.NextEarningDate:
+		if not self.NextEarningDate:
 			try:
 				NextEarningDate = stockInfo.get_earning_date() 
 				NextEarningDate = NextEarningDate.replace(',', '')
