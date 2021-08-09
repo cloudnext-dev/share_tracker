@@ -34,7 +34,7 @@ class populateTables():
 				inserted.append((future.AssetId, future.EntryPrice))
 			except:
 				failed.append((future.AssetId, future.EntryPrice))
-				#print("e is", e, type(e))
+				#print('e is', e, type(e))
 				pass
 		
 		resultDict['success'] = inserted
