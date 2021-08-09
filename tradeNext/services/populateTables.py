@@ -34,6 +34,7 @@ class populateTables():
 			except Exception as e:
 				failed.append((future.AssetId, future.EntryPrice))
 				print('e is', e, type(e))
+				continue
 		resultDict['success'] = inserted
 		resultDict['failed'] = failed
 		result = "Inserted Values in Database"
