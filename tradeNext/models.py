@@ -94,7 +94,7 @@ class AssetDetails(models.Model):
 		if ',' in stockPrice:
 			stockPrice = stockPrice.replace(',', '')
 		self.CurrentMarketPrice = float(stockPrice)
-		if not self.NextEarningDate:
+		if NextEarningDate and not self.NextEarningDate:
 			try:
 				NextEarningDate = stockInfo.get_earning_date() 
 				NextEarningDate = NextEarningDate.replace(',', '')
