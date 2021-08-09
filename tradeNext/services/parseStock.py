@@ -26,7 +26,10 @@ class parseStock:
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36"}
 
 	def get_price(self):
-		return self.parsedStock.xpath('//span[@class="Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)"]')[0].text
+		try:
+			return self.parsedStock.xpath('//span[@class="Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)"]')[0].text
+		except:
+			return '0.00'
 
 	def get_sector(self):
 		try:
