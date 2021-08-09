@@ -29,12 +29,21 @@ class parseStock:
 		return self.parsedStock.xpath('//span[@class="Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)"]')[0].text
 
 	def get_sector(self):
-		return self.parsedStock.xpath('//span[contains(text(), "Sector(s)")]/following-sibling::span')[0].text
+		try:
+			return self.parsedStock.xpath('//span[contains(text(), "Sector(s)")]/following-sibling::span')[0].text
+		except:
+			return 'N/A'
 
 	def get_industry(self):
-		return self.parsedStock.xpath('//span[contains(text(), "Industry")]/following-sibling::span')[0].text		
+		try:
+			return self.parsedStock.xpath('//span[contains(text(), "Industry")]/following-sibling::span')[0].text		
+		except:
+			return 'N/A'
 
 	def get_earning_date(self):
-		return self.parsedStock.xpath('//td[span[contains(text(), "Earnings Date")]]/following-sibling::td/span')[0].text
+		try:
+			return self.parsedStock.xpath('//td[span[contains(text(), "Earnings Date")]]/following-sibling::td/span')[0].text
+		except:
+			pass
 
 

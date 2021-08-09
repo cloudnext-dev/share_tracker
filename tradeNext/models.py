@@ -90,7 +90,10 @@ class AssetDetails(models.Model):
 		stInfo = Strategy.objects.get(StrategyName=self.StrategyId)
 		#self.CurrentMarketPrice = si.get_live_price(self.AssetId)
 		stockInfo = parseStock.parseStock(self.AssetId, 'price')
-		self.CurrentMarketPrice = float(stockInfo.get_price())
+		stockPrice = stockInfo.get_price()
+		if ',' in stockPrice:
+			stockPrice = stockPrice.replace(',', '')
+		self.CurrentMarketPrice = float(stockPrice)
 		if not self.NextEarningDate:
 			try:
 				NextEarningDate = stockInfo.get_earning_date() 

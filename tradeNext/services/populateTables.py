@@ -24,6 +24,12 @@ class populateTables():
 			argList.append(asset_dict)
 		with concurrent.futures.ThreadPoolExecutor(max_workers=60) as executor:
 			executor.map(lambda f: AssetDetails.objects.create(**f), argList)
+			#result_futures = executor.map(lambda f: AssetDetails.objects.create(**f), argList)
+			#for future in concurrent.futures.as_completed(result_futures):
+			#	try:
+			#		print('resutl is', future.result())
+			#	except Exception as e:
+			#		print('e is', e, type(e))			
 
 		result = "Inserted Values in Database"
 		return result
