@@ -56,7 +56,7 @@
                     <div class="col-sm-3 col-3">
                         <div class="form-group">
                             {% if result %}
-                                <p> Asset Inserted Successfully : {{ result.success }}</p>
+                            <p> Asset Inserted Successfully : {{ result.success }}</p>    
                                 <p> Asset Inserted Failed  : {{ result.failed }}</p>
                             {% endif %}
                             <p><a href="{%url 'tradeNext:index' %}">Return to Home Page</a></p>
