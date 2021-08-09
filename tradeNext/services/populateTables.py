@@ -23,16 +23,16 @@ class populateTables():
 			asset_dict['EntryPrice'] = float(row[1])
 			#AssetDetails.objects.create(**asset_dict)
 			argList.append(asset_dict)
-		with concurrent.futures.ThreadPoolExecutor(max_workers=60) as executor:
+		with concurrent.futures.ThreadPoolExecutor(max_workers=30) as executor:
 			#executor.map(lambda f: AssetDetails.objects.create(**f), argList)
 			result_futures = executor.map(lambda f: AssetDetails.objects.create(**f), argList)
 			inserted = []
 			failed = []
 		for future in result_futures:
 			try:
-				inserted.append(future.AssetId)
+				inserted.append((future.AssetId, future.EntryPrice))
 			except Exception as e:
-				failed.append(future.AssetId)
+				failed.append((future.AssetId, future.EntryPrice))
 				print('e is', e, type(e))
 		resultDict['success'] = inserted
 		resultDict['failed'] = failed

@@ -8,7 +8,7 @@ def update_stock():
     assets = AssetDetails.objects.all()
     #for asset in assets:
     #	asset.save()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=60) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=30) as executor:
             executor.map(lambda asset: asset.save(), assets)
 
 def start():
