@@ -3,6 +3,12 @@ import csv
 import os
 from django.core.files.storage import FileSystemStorage
 import concurrent.futures
+import configparser
+config = configparser.ConfigParser()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(BASE_DIR, os.pardir))
+configFile = os.path.join(BASE_DIR, 'config.ini')
+config.read(configFile)
 class populateTables():
 	def insertAssetsDetails(self, filename, strategy, account):
 		fs = FileSystemStorage()
@@ -21,10 +27,8 @@ class populateTables():
 			asset_dict['AccountId'] = account
 			asset_dict['StrategyId'] = strategy
 			asset_dict['EntryPrice'] = float(row[1])
-			#AssetDetails.objects.create(**asset_dict)
 			argList.append(asset_dict)
-		with concurrent.futures.ThreadPoolExecutor(max_workers=30) as executor:
-			#executor.map(lambda f: AssetDetails.objects.create(**f), argList)
+		with concurrent.futures.ThreadPoolExecutor(max_workers=int(config["ConcurrentProcess"]["Number"])) as executor:
 			result_futures = executor.map(lambda f: AssetDetails.objects.create(**f), argList)
 			inserted = []
 			failed = []
@@ -34,7 +38,6 @@ class populateTables():
 				inserted.append((future.AssetId, future.EntryPrice))
 			except:
 				failed.append((future.AssetId, future.EntryPrice))
-				#print('e is', e, type(e))
 				pass
 		
 		resultDict['success'] = inserted

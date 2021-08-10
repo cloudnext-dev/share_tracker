@@ -1,12 +1,19 @@
 import requests
 from lxml import html
 import random
+import os
+import configparser
+config = configparser.ConfigParser()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(BASE_DIR, os.pardir))
+configFile = os.path.join(BASE_DIR, 'config.ini')
+config.read(configFile)
 class parseStock:
 	def __init__(self, ticker, type):
 		if type == 'price':
-			url = "http://finance.yahoo.com/quote/%s?p=%s" % (ticker, ticker)
+			url = config['StockInfoUrl']['Quote'].format(ticker, ticker)
 		else:
-			url = "https://finance.yahoo.com/quote/%s/profile?p=%s" % (ticker, ticker)
+			url = config['StockInfoUrl']['Profile'].format(ticker, ticker)
 		for i in range(3):
 			try:
 				response = requests.get(url, verify=False, headers=self._get_headers(), timeout=30)
