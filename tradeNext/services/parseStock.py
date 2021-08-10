@@ -62,4 +62,10 @@ class parseStock:
 		except:
 			pass
 
+	def get_beta(self):
+		try:
+			return float(self.parsedStock.xpath('//td[span[contains(text(), "Beta (5Y Monthly)")]]/following-sibling::td/span')[0].text)
+		except:
+			return 0.00
+
 

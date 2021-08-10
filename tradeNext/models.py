@@ -103,6 +103,11 @@ class AssetDetails(models.Model):
 				#self.NextEarningDate = si.get_next_earnings_date(self.AssetId)
 			except:
 				pass
+		if not self.Beta:
+			try:
+				self.Beta = stockInfo.get_beta()
+			except:
+				self.Beta = 0.00
 		self.AvgEntryPoint1 = self.EntryPrice - (self.EntryPrice*stInfo.AvgPoint1/100)
 		self.AvgEntryPoint2 = self.AvgEntryPoint1 - (self.AvgEntryPoint1*stInfo.AvgPoint2/100)
 		self.TargetPrice = self.EntryPrice + (self.EntryPrice*stInfo.TargetPrice/100)

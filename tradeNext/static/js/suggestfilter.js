@@ -78,6 +78,7 @@ function putTableData(result) {
                 "<td>" + b.TargetPrice.toFixed(2) + "</td>" +
                 "<td>" + b.Sector + "</td>" +
                 "<td>" + b.Industry + "</td>" +
+                "<td>" + b.Beta + "</td>" +
                 "<td>" + b.NextEarningDate + "</td>" +
                 "<td>" + b.LastUpdatedOn + "</td></tr>"
             $("#listing").append(row);   
