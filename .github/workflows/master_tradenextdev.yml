@@ -16,7 +16,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
+    
+    - name: Setup ODBC Driver 17 for SQL Server
+      run: |
+        apt-get update && apt-get install -y gnupg
+        curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+        && curl https://packages.microsoft.com/config/debian/9/prod.list \
+        > /etc/apt/sources.list.d/mssql-release.list \
+        && apt-get install -y --no-install-recommends \
+        locales \
+        apt-transport-https \
+        && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
+        && locale-gen \
+        && apt-get update \
+        && apt-get -y --no-install-recommends install \
+        unixodbc-dev \
+        msodbcsql17
+        
     - name: Set up Python version
       uses: actions/setup-python@v1
       with:
@@ -24,15 +40,6 @@ jobs:
 
     - name: Create and start virtual environment
       run: |
-        sudo apt update -y  &&  apt upgrade -y && apt-get update
-        sudo apt install -y curl openjdk-8-jdk unixodbc-dev
-        sudo curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-        sudo curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
-        sudo apt update -y  &&  apt upgrade -y && apt-get update
-        sudo ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated msodbcsql17
-        sudo ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated mssql-tools
-        sudo echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-        sudo echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
         python -m venv venv
         source venv/bin/activate
 
