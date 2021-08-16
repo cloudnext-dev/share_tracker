@@ -24,15 +24,15 @@ jobs:
 
     - name: Create and start virtual environment
       run: |
-        apt update -y  &&  apt upgrade -y && apt-get update
-        apt install -y curl openjdk-8-jdk unixodbc-dev
-        curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-        curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
-        apt-get update
-        ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated msodbcsql17
-        ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated mssql-tools
-        echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-        echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+        sudo apt update -y  &&  apt upgrade -y && apt-get update
+        sudo apt install -y curl openjdk-8-jdk unixodbc-dev
+        sudo curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+        sudo curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+        sudo apt-get update
+        sudo ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated msodbcsql17
+        sudo ACCEPT_EULA=Y apt-get install -y --allow-unauthenticated mssql-tools
+        sudo echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+        sudo echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
         python -m venv venv
         source venv/bin/activate
 
