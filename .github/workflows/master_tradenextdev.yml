@@ -19,6 +19,7 @@ jobs:
     
     - name: Setup ODBC Driver 17 for SQL Server
       run: |
+        ENV ACCEPT_EULA=Y
         apt-get update && apt-get install -y gnupg
         curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
         && curl https://packages.microsoft.com/config/debian/9/prod.list \
