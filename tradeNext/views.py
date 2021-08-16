@@ -41,6 +41,7 @@ class AssetListing(ListAPIView):
 		    queryList = queryList.order_by("Avg1Diff")
 		elif sort_by == "Avg2Diff":
 			queryList = queryList.order_by("Avg2Diff")
+
 		return queryList
 
 def suggestLimitTrade(request):

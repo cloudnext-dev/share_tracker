@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import mimetypes
-
+from django.utils import timezone
+TIME_ZONE = 'Canada/Eastern'
+USE_TZ = True
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -84,13 +86,17 @@ MAINTENANCE_MODE_TEMPLATE = '503.html'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'OPTIONS':{
-            'timeout': 30,
-        }
-    }
+    "default": {
+        "ENGINE": "sql_server.pyodbc",
+        "NAME": "tradenextsqldb0",
+        "USER": "sqladminuser",
+        "PASSWORD": "20?zEj*wre=r",
+        "HOST": "tcp:tradenextsqlserver0.database.windows.net",
+        "PORT": "1433",
+        "OPTIONS": {
+            "driver": "ODBC Driver 17 for SQL Server", 
+        },
+    },
 }
 
 

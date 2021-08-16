@@ -4,6 +4,7 @@ import yfinance as yf
 from yahoo_fin import stock_info as si
 from datetime import datetime
 from tradeNext.services import parseStock
+from django.utils import timezone
 
 class Customer(models.Model):
     UserId = models.AutoField(primary_key=True)
@@ -98,7 +99,6 @@ class AssetDetails(models.Model):
 			try:
 				NextEarningDate = stockInfo.get_earning_date() 
 				NextEarningDate = NextEarningDate.replace(',', '')
-				print('NextEarningDate', NextEarningDate)
 				self.NextEarningDate = datetime.strptime(NextEarningDate, '%b %d %Y')
 				#self.NextEarningDate = si.get_next_earnings_date(self.AssetId)
 			except:
@@ -129,7 +129,7 @@ class AssetDetails(models.Model):
 			self.Quantity = minQuantity
 		else:
 			self.Quantity = maxQuantity
-		self.LastUpdatedOn = datetime.now()
+		self.LastUpdatedOn = timezone.localtime(timezone.now())
 		super(AssetDetails, self).save(*args, **kwargs)
 	
 
