@@ -3,6 +3,7 @@
 var send_data = {}
 
 $(document).ready(function () {
+    loader_id = document.getElementById("loader");
     resetFilters();
     getAPIData();
     getSectors();
@@ -47,8 +48,10 @@ $(document).ready(function () {
     });
 
     $("#refresh_stocks").click(function(){
+        loader_id.style.visibility = "visible";
         refreshStocks();
     })
+    loader_id.style.visibility = "hidden";
 })
 
 
@@ -174,7 +177,8 @@ function refreshStocks() {
             if(result.status == true){
                 setTimeout(function(){
                     location.reload(); 
-                }, 3000); 
+                    loader_id.style.visibility = "hidden";
+                }, 1000); 
             }
         },
         error: function(response){
