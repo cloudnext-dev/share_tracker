@@ -86,6 +86,16 @@ def getIndustry(request):
             "industries": industries, 
         }
         return JsonResponse(data, status = 200)
+
+def refreshStocks(request):
+	if request.method == "GET" and request.is_ajax():
+		from shareUpdater import updater
+		updater.update_stock()
+		data = {
+            "status": True, 
+        }
+		return JsonResponse(data, status = 200)        
+
 @force_maintenance_mode_off
 def getAccounts(request):
     if request.method == "GET" and request.is_ajax():

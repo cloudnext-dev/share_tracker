@@ -39,6 +39,10 @@ $(document).ready(function () {
     $("#display_all").click(function(){
         resetFilters();
         getAPIData();
+    });
+
+    $("#refresh_stocks").click(function(){
+        refreshStocks();
     })
 })
 
@@ -145,6 +149,26 @@ function getIndustries() {
                 industry_options += "<option>" + b + "</option>"
             });
             $("#industries").html(industry_options)
+        },
+        error: function(response){
+            console.log(response)
+        }
+    });
+}
+
+function refreshStocks() {
+    let url = '/tradeNext/ajax/refreshStocks/'
+
+    $.ajax({
+        method: 'GET',
+        url: url,
+        data: {},
+        success: function (result) {
+            if(result.status == true){
+                setTimeout(function(){
+                    location.reload(); 
+                }, 3000); 
+            }
         },
         error: function(response){
             console.log(response)

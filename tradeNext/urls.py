@@ -14,5 +14,6 @@ urlpatterns = [
     path("ajax/industries/", getIndustry, name = 'get_industry'),
     path("ajax/accounts/", getAccounts, name = 'get_accounts'),
     path("ajax/strategies/", getStrategy, name = 'get_strategy'),
+    path("ajax/refreshStocks/", refreshStocks, name = 'refresh_stocks'),
     path("uploadAssets/", uploadAssets, name = 'uploadAssetFile')
 ]
